@@ -1,0 +1,7 @@
+[02-Oct-2016 23:07:37 America/Los_Angeles] PHP Warning:  curl_setopt(): the provided file handle is not writable in /home/easefr5/public_html/ease-freight/curl.php on line 7
+[02-Oct-2016 23:39:21 America/Los_Angeles] PHP Warning:  curl_setopt(): the provided file handle is not writable in /home/easefr5/public_html/ease-freight/curl.php on line 6
+[02-Oct-2016 23:44:16 America/Los_Angeles] PHP Warning:  curl_setopt(): the provided file handle is not writable in /home/easefr5/public_html/ease-freight/curl.php on line 8
+[02-Oct-2016 23:44:18 America/Los_Angeles] PHP Warning:  curl_setopt(): the provided file handle is not writable in /home/easefr5/public_html/ease-freight/curl.php on line 8
+[02-Oct-2016 23:46:15 America/Los_Angeles] PHP Warning:  fopen(/ease-freight/public/quote/response?paymentRef=19): failed to open stream: No such file or directory in /home/easefr5/public_html/ease-freight/curl.php on line 5
+[02-Oct-2016 23:46:15 America/Los_Angeles] PHP Warning:  curl_setopt(): supplied argument is not a valid File-Handle resource in /home/easefr5/public_html/ease-freight/curl.php on line 8
+[02-Oct-2016 23:46:15 America/Los_Angeles] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /home/easefr5/public_html/ease-freight/curl.php on line 12

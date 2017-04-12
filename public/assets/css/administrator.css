@@ -1,0 +1,592 @@
+
+.skin-blue .main-header .top-logo
+{ 
+	min-height:70px; 
+	background-color: #0054A6;
+}
+
+.skin-blue .main-header .top-logo:hover
+{ 
+    background-color: #0054A6;
+}
+
+.leftside-bar
+{
+	padding-top:80px;
+}
+
+.skin-blue .main-header .nav-bar
+{
+    background-color: #0054A6;
+	border-left: 1px solid #ccc;
+}
+
+.skin-blue .sidebar-menu>li:hover>a, .skin-blue .sidebar-menu>li.active>a
+ {
+    border-left-color: #0054A6;
+}
+
+.skin-blue .main-header li.administrator-head{
+	background-color:#0054A6;	
+}
+.skin-blue .treeview-menu>li>a:active{ color:#fff;}
+
+
+/*---------------------------------------airports---------------------------------*/
+
+.administrator-airports .form-horizontal.control-label.admin-left 
+{
+    text-align: left;
+}
+
+.airports-view .no-padding{ padding:10px !important;}
+
+.administrator-airports .box.box-info {
+    border-top-color: #d2d6de;
+}
+.no-padding a.btn.btn-success.admin-edit {
+    background: #0054a6;
+    border-color: #0054a6;
+}
+
+.administrator-airports .admin-edit
+{
+background-color:#0054A6;
+}
+
+/* .airports-view th, .airports-view td{ width:50px;} */
+
+.airports-view td:first-child{
+	width:7%;
+}
+.airports-view td:nth-child(2){
+	width:40%;
+}
+.administrator-airports .box.box-info
+{
+	border-top-color:#d2d6de;
+}
+
+.administrator-airports .admin-btn
+{
+	padding: 6px 15px;
+	font-size: 14px;
+    margin-right: 10px;
+}
+
+/*---------------------------------------airlines---------------------------------*/
+
+.administrator-airlines .form-horizontal.control-label.admin-left 
+{
+    text-align: left;
+} 
+
+.airlines-view .no-padding{ padding:10px !important;}
+
+.administrator-airlines .box.box-info {
+    border-top-color: #d2d6de;
+}
+.no-padding a.btn.btn-success.admin-edit {
+    background: #0054a6;
+    border-color: #0054a6;
+}
+
+.administrator-airlines .admin-edit
+{
+background-color:#0054A6;
+}
+
+/* .airlines-view th, .airlines-view td{ width:50px;} */
+
+.airlines-view td:first-child{
+	width:7%;
+}
+
+.administrator-airlines .box.box-info
+{
+	border-top-color:#d2d6de;
+}
+
+.administrator-airlines .admin-btn
+{
+	padding: 6px 15px;
+	font-size: 14px;
+    margin-right: 10px;
+}
+
+/*---------------------------------------countries--------------------------------*/
+
+.administrator-countries .form-horizontal.control-label.admin-left 
+{
+    text-align: left;
+} 
+
+.countries-view .no-padding{ padding:10px !important;}
+
+.administrator-countries .box.box-info {
+    border-top-color: #d2d6de;
+}
+.no-padding a.btn.btn-success.admin-edit {
+    background: #0054a6;
+    border-color: #0054a6;
+}
+
+.administrator-countries .admin-edit
+{
+background-color:#0054A6;
+}
+
+.countries-view td:first-child{
+	width:10%;
+}
+
+.administrator-countries .box.box-info
+{
+	border-top-color:#d2d6de;
+}
+
+.administrator-countries .admin-btn
+{
+	padding: 6px 15px;
+	font-size: 14px;
+    margin-right: 10px;
+}
+
+/*---------------------------------------cities--------------------------------*/
+
+.administrator-cities .form-horizontal.control-label.admin-left 
+{
+    text-align: left;
+} 
+
+.cities-view .no-padding{ padding:10px !important;}
+
+.administrator-cities .box.box-info {
+    border-top-color: #d2d6de;
+}
+.no-padding a.btn.btn-success.admin-edit {
+    background: #0054a6;
+    border-color: #0054a6;
+}
+
+.administrator-cities .admin-edit
+{
+background-color:#0054A6;
+}
+
+.cities-view td:first-child{
+	width:10%;
+}
+
+.cities-view td:nth-child(2){
+	width:25%;
+}
+.cities-view td:nth-child(3){
+	width:30%;
+}
+
+.administrator-cities .box.box-info
+{
+	border-top-color:#d2d6de;
+}
+
+.administrator-cities .admin-btn
+{
+	padding: 6px 15px;
+	font-size: 14px;
+    margin-right: 10px;
+}
+
+/*---------------------------------------services--------------------------------*/
+
+.administrator-services .form-horizontal.control-label.admin-left 
+{
+    text-align: left;
+} 
+
+.services-view .no-padding{ padding:10px !important;}
+
+.administrator-services .box.box-info {
+    border-top-color: #d2d6de;
+}
+.no-padding a.btn.btn-success.admin-edit {
+    background: #0054a6;
+    border-color: #0054a6;
+}
+
+.administrator-services.admin-edit
+{
+background-color:#0054A6;
+}
+
+.services-view td:first-child{
+	width:10%;
+}
+
+.services-view td:nth-child(2){
+	width:25%;
+}
+.services-view td:nth-child(3){
+	width:30%;
+}
+
+.administrator-services .box.box-info
+{
+	border-top-color:#d2d6de;
+}
+
+.administrator-services .admin-btn
+{
+	padding: 6px 15px;
+	font-size: 14px;
+    margin-right: 10px;
+}
+
+.administrator-services .btn.btn-default
+{
+	float:right;
+} 
+
+/*---------------------------------------status--------------------------------*/
+
+.administrator-status .form-horizontal.control-label.admin-left 
+{
+    text-align: left;
+} 
+
+.status-view .no-padding{ padding:10px !important;}
+
+.administrator-status .box.box-info {
+    border-top-color: #d2d6de;
+}
+.no-padding a.btn.btn-success.admin-edit {
+    background: #0054a6;
+    border-color: #0054a6;
+}
+
+.administrator-status.admin-edit
+{
+background-color:#0054A6;
+}
+
+.status-view td:first-child{
+	width:10%;
+}
+
+.administrator-status .box.box-info
+{
+	border-top-color:#d2d6de;
+}
+
+.administrator-status .admin-btn
+{
+	padding: 6px 15px;
+	font-size: 14px;
+    margin-right: 10px;
+}
+
+/*---------------------------------------units--------------------------------*/
+
+.administrator-units .form-horizontal.control-label.admin-left 
+{
+    text-align: left;
+} 
+
+.units-view .no-padding{ padding:10px !important;}
+
+.administrator-units .box.box-info {
+    border-top-color: #d2d6de;
+}
+.no-padding a.btn.btn-success.admin-edit {
+    background: #0054a6;
+    border-color: #0054a6;
+}
+
+.administrator-units.admin-edit
+{
+background-color:#0054A6;
+}
+
+.units-view td:first-child{
+	width:10%;
+}
+
+.administrator-units .box.box-info
+{
+	border-top-color:#d2d6de;
+}
+
+.administrator-units .admin-btn
+{
+	padding: 6px 15px;
+	font-size: 14px;
+    margin-right: 10px;
+}
+.administrator-units .btn.btn-default {
+    float: right;
+}
+
+/*--------------------------------exchange-section--------------------------------*/
+
+.administrator-exchange .form-horizontal.control-label.admin-left 
+{
+    text-align: left;
+} 
+
+.exchange-view .no-padding{ padding:10px !important;}
+
+.administrator-exchange .box.box-info {
+    border-top-color: #d2d6de;
+}
+.no-padding a.btn.btn-success.admin-edit {
+    background: #0054a6;
+    border-color: #0054a6;
+}
+
+.administrator-exchange.admin-edit
+{
+background-color:#0054A6;
+}
+
+.exchange-view td:first-child{
+	width:10%;
+}
+
+.administrator-exchange .box.box-info
+{
+	border-top-color:#d2d6de;
+}
+
+.administrator-exchange .admin-btn
+{
+	padding: 6px 15px;
+	font-size: 14px;
+    margin-right: 10px;
+}
+
+/*--------------------------------Transportation Selection List--------------------------------*/
+
+.administrator-transportation .form-horizontal.control-label.admin-left 
+{
+    text-align: left;
+} 
+
+.transportation-view .no-padding{ padding:10px !important;}
+
+.administrator-transportation .box.box-info {
+    border-top-color: #d2d6de;
+}
+.no-padding a.btn.btn-success.admin-edit {
+    background: #0054a6;
+    border-color: #0054a6;
+}
+
+.administrator-transportation.admin-edit
+{
+background-color:#0054A6;
+}
+
+.transportation-view td:first-child{
+	width:10%;
+}
+
+.administrator-transportation .box.box-info
+{
+	border-top-color:#d2d6de;
+}
+
+.administrator-transportation .admin-btn
+{
+	padding: 6px 15px;
+	font-size: 14px;
+    margin-right: 10px;
+}
+
+/*--------------------------------CFT Mode--------------------------------*/
+
+.administrator-cft .form-horizontal.control-label.admin-left 
+{
+    text-align: left;
+} 
+
+.cft-view .no-padding{ padding:10px !important;}
+
+.administrator-cft .box.box-info {
+    border-top-color: #d2d6de;
+}
+.no-padding a.btn.btn-success.admin-edit {
+    background: #0054a6;
+    border-color: #0054a6;
+}
+
+.administrator-cft.admin-edit
+{
+background-color:#0054A6;
+}
+
+.cft-view td:first-child{
+	width:10%;
+}
+
+.administrator-cft .box.box-info
+{
+	border-top-color:#d2d6de;
+}
+
+.administrator-cft .admin-btn
+{
+	padding: 6px 15px;
+	font-size: 14px;
+    margin-right: 10px;
+}
+
+/*--------------------------------Container-Mode--------------------------------*/
+
+.administrator-container .form-horizontal.control-label.admin-left 
+{
+    text-align: left;
+} 
+
+.container-view .no-padding{ padding:10px !important;}
+
+.administrator-container .box.box-info {
+    border-top-color: #d2d6de;
+}
+.no-padding a.btn.btn-success.admin-edit {
+    background: #0054a6;
+    border-color: #0054a6;
+}
+
+.administrator-container.admin-edit
+{
+background-color:#0054A6;
+}
+
+.container-view td:first-child{
+	width:10%;
+}
+
+.administrator-container .box.box-info
+{
+	border-top-color:#d2d6de;
+}
+
+.administrator-container .admin-btn
+{
+	padding: 6px 15px;
+	font-size: 14px;
+    margin-right: 10px;
+}
+
+/*--------------------------------Ocean Ports--------------------------------*/
+
+.administrator-oceanports .form-horizontal.control-label.admin-left 
+{
+    text-align: left;
+} 
+
+.oceanports-view .no-padding{ padding:10px !important;}
+
+.administrator-oceanports .box.box-info {
+    border-top-color: #d2d6de;
+}
+.no-padding a.btn.btn-success.admin-edit {
+    background: #0054a6;
+    border-color: #0054a6;
+}
+
+.administrator-oceanports.admin-edit
+{
+background-color:#0054A6;
+}
+
+.oceanports-view td:first-child{
+	width:10%;
+}
+
+.administrator-oceanports .box.box-info
+{
+	border-top-color:#d2d6de;
+}
+
+.administrator-oceanports .admin-btn
+{
+	padding: 6px 15px;
+	font-size: 14px;
+    margin-right: 10px;
+}
+
+/*--------------------------------COL Departments--------------------------------*/
+
+.administrator-coldepartments .form-horizontal.control-label.admin-left 
+{
+    text-align: left;
+} 
+
+.coldepartments-view .no-padding{ padding:10px !important;}
+
+.administrator-coldepartments .box.box-info {
+    border-top-color: #d2d6de;
+}
+.no-padding a.btn.btn-success.admin-edit {
+    background: #0054a6;
+    border-color: #0054a6;
+}
+
+.administrator-coldepartments.admin-edit
+{
+background-color:#0054A6;
+}
+
+.coldepartments-view td:first-child{
+	width:10%;
+}
+
+.administrator-coldepartments .box.box-info
+{
+	border-top-color:#d2d6de;
+}
+
+.administrator-coldepartments .admin-btn
+{
+	padding: 6px 15px;
+	font-size: 14px;
+    margin-right: 10px;
+}
+
+/*--------------------------------Freight-Forwarder Add--------------------------------*/
+
+.administrator-right{ font-size:13px;}
+
+.administrator-add .box.box-info {
+    border-top-color: #d2d6de;
+}
+
+/*--------------------------------Freight-Forwarder view--------------------------------*/
+
+.administrator-view .box.box-info {
+    border-top-color: #d2d6de;
+}
+
+
+.administrator-view .admin-edit{   background: #0054a6;
+    border-color: #0054a6;}
+	
+	
+.administrator-view .label-g{ font-size:13px; color: #fff !important;}
+
+.administrator-view .label-i, .administrator-view .label-d{ font-size:13px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

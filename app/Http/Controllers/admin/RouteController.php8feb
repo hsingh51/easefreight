@@ -1,0 +1,746 @@
+<?php
+
+namespace App\Http\Controllers\admin;
+
+use Illuminate\Http\Request;
+
+use App\Http\Requests;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Redirect;
+use DB;
+use Auth;
+use Form;
+use App;
+class RouteController extends Controller
+{
+    
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+
+        $this->middleware('auth');
+        $this->user_id = Auth::user()->id;
+        $this->company_id = Auth::user()->company_id;
+        $this->before(Auth::user()->group_id);
+        $this->locale = App::getLocale();
+        $this->freightforwarderMsg = \Config::get('constants.freight-forwarder');
+        if($this->locale == "es"){
+            $this->freightforwarderMsg = \Config::get('constants.es_freight-forwarder');
+        }
+    }
+
+    public function before($group_id)
+    {
+        if ($group_id == '1') {
+            if($this->locale == "es"){
+                return Redirect::to('/es/administrator/dashboard')->send();
+            }else{
+                return Redirect::to('/administrator/dashboard')->send();
+            }
+        }
+        if ($group_id == '3') {
+            if($this->locale == "es"){
+                return Redirect::to('/es/home')->send();
+            }else{
+                return Redirect::to('/home')->send();
+            }
+        }
+    }
+
+     
+    public function viewAFRRoute()
+    {
+        $query =  DB::table('afr_routes')->leftjoin('cities as ocity', 'afr_routes.origin_city_id', '=', 'ocity.city_id')
+            ->leftjoin('countries as ocountry', 'afr_routes.origin_country_id', '=', 'ocountry.country_id')
+            ->leftjoin('cities as dcity', 'afr_routes.destination_city_id', '=', 'dcity.city_id')
+            ->leftjoin('countries as dcountry', 'afr_routes.destination_country_id', '=', 'dcountry.country_id')
+            ->leftjoin('airports as oairports', 'afr_routes.origin_airport_id', '=', 'oairports.airport_id')
+            ->leftjoin('airports as dairports', 'afr_routes.destination_airport_id', '=', 'dairports.airport_id')
+            ->leftjoin('afr_route_rates as rates', 'rates.afr_route_id', '=', 'afr_routes.afr_route_id', 'rates.afr_route_id')
+            ->leftjoin('itinerary', 'itinerary.afr_route_id', '=', 'afr_routes.afr_route_id')
+            ->leftjoin('airlines as c_airlines', 'rates.carrier', '=', 'c_airlines.airline_id')
+            ->where('afr_routes.company_id','=',$this->company_id)
+            ->select('afr_routes.*','ocity.title as ocity_title','ocountry.title as ocountry_title',
+                'dcity.title as dcity_title','dcountry.title as dcountry_title',
+                'oairports.name as oair_name','oairports.iata_code as oiata_code',
+                'dairports.name as dair_name','dairports.iata_code as diata_code','rates.afr_route_rates_id','itinerary.itinerary_id',DB::raw('concat(c_airlines.title, ", ", c_airlines.iata_designator) as carrier'));
+        if(isset($_GET['search']) && !empty($_GET['search'])){
+
+            $query = $query->Where(function ($query) {
+                $query->orwhere('ocity.title','LIKE','%'.$_GET['search'].'%')
+                ->orwhere('ocountry.title','LIKE','%'.$_GET['search'].'%')
+                ->orwhere('dcity.title','LIKE','%'.$_GET['search'].'%')
+                ->orwhere('dcountry.title','LIKE','%'.$_GET['search'].'%');
+            });
+
+        }
+        $result = $query->paginate(PAGENATE);
+        //dd($result);
+        return view('admin.route.afr.view')->with('data',$result);
+    }
+    public function getAFRRoute()
+    {
+        $stats['countries'] = DB::table('countries')
+                              ->select('countries.country_id','countries.title')
+                              ->where('is_active','=','1')
+                              ->orderBy('countries.title')
+                              ->get();
+        $stats['cities'] = DB::table('cities')->select('cities.city_id','cities.title')->where('is_active','=','1')->get();
+        $stats['airports'] = DB::table('airports')->select('airports.airport_id','airports.name','airports.iata_code')
+            ->where('is_active','=','1')->get();
+        return view('admin.route.afr.add')->with('stats',$stats);
+    }
+
+    // UserController.php
+    public function addAFRRoute(Request $request) {
+        $post = $request->all();
+        $company_id = Auth::user()->company_id;
+        $this->validate($request, [
+            'country_id' => 'required',
+            'city_id' => 'required',
+            'air' => 'required',
+            'des_country_id' => 'required',
+            'des_city_id' => 'required',
+            'des_air' => 'required',
+        ]);
+        $route = DB::table('afr_routes')
+                              ->select('afr_routes.afr_route_id')
+                              ->where('company_id','=',$company_id)
+                              ->where('origin_airport_id','=',$post['air'])
+                              ->where('destination_airport_id','=',$post['des_air'])
+                              ->first();
+        if(@$route){
+            if($this->locale == "es"){
+                return Redirect::to('/es/admin/routeAFR/View')->with('info',"Route already exists");
+            }else{
+                return Redirect::to('/admin/routeAFR/View')->with('info',"Route already exists");
+            }
+        }
+        $datas = array(
+            'company_id' => $company_id,
+            'origin_country_id' => $post['country_id'],
+            'origin_city_id' => $post['city_id'],
+            'origin_airport_id' => $post['air'],
+            'destination_country_id' => $post['des_country_id'],
+            'destination_city_id' => $post['des_city_id'],
+            'destination_airport_id' => $post['des_air'],
+            'created' => CURRENT_DATETIME,
+        );
+        //dd($post);
+        if($afr_route_id = DB::table('afr_routes')->insertGetId($datas)){
+            if(@$post['submit_add']){
+                if($this->locale == "es"){
+                    return Redirect::to('/es/admin/tarifasAFR/Add/'.$afr_route_id.'/0/0');
+                }else{
+                    return Redirect::to('/admin/tarifasAFR/Add/'.$afr_route_id.'/0/0');
+                }
+            } 
+            if($this->locale == "es"){
+                return Redirect::to('/es/admin/routeAFR/View')->with('success',$this->freightforwarderMsg['success']);
+            }else{
+                return Redirect::to('/admin/routeAFR/View')->with('success',$this->freightforwarderMsg['success']);
+            }
+        }else{
+            if($this->locale == "es"){
+                return Redirect::to('/es/admin/routeAFR/Add')->with('error',$this->freightforwarderMsg['error']);
+            }else{
+                return Redirect::to('/admin/routeAFR/Add')->with('error',$this->freightforwarderMsg['error']);
+            }
+        }
+    }
+
+    public function deleteAFRRoute($id)
+    {
+        DB::table('afr_routes')->where('afr_routes.afr_route_id','=',$id)->delete();
+        if($this->locale == "es"){
+            return Redirect::to('/es/admin/routeAFR/View')->with('success',$this->freightforwarderMsg['delete']);
+        }else{
+            return Redirect::to('/admin/routeAFR/View')->with('success',$this->freightforwarderMsg['delete']);
+        }
+    }
+    public function geteditAFRRoute($id)
+    {
+        if(!isset($id) && empty($id)){
+            if($this->locale == "es"){
+                return Redirect::to('/es/admin/routeAFR/View');
+            }else{
+                return Redirect::to('/admin/routeAFR/View');
+            }
+        }
+        
+        $stats['data'] = DB::table('afr_routes')->select('afr_routes.*')
+            ->where('afr_routes.afr_route_id','=',$id)->first();
+        $stats['countries'] = DB::table('countries')->select('countries.country_id','countries.title')->where('is_active','=','1')
+            ->get();
+        $stats['ocities'] = DB::table('cities')->select('cities.city_id','cities.title')->where('country_id','=',$stats['data']->origin_country_id)->where('is_active','=','1')->get();
+        
+        $stats['oairports'] = DB::table('airports')->select('airports.airport_id','airports.name','airports.iata_code')
+            ->where('is_active','=','1')->where('city_id','=',$stats['data']->origin_city_id)->where('country_id','=',$stats['data']->origin_country_id)->get();
+        $stats['dcities'] = DB::table('cities')->select('cities.city_id','cities.title')->where('country_id','=',$stats['data']->destination_country_id)->where('is_active','=','1')->get();
+        
+        $stats['dairports'] = DB::table('airports')->select('airports.airport_id','airports.name','airports.iata_code')
+            ->where('is_active','=','1')->where('city_id','=',$stats['data']->destination_city_id)->where('country_id','=',$stats['data']->destination_country_id)->get();
+           // dd($stats);
+        return view('admin.route.afr.edit')->with('stats',$stats);
+    }
+    public function editAFRRoute(Request $request)
+    {
+        $post = $request->all();
+        $company_id = Auth::user()->company_id;
+        $this->validate($request, [
+            'country_id' => 'required',
+            'city_id' => 'required',
+            'air' => 'required',
+            'des_country_id' => 'required',
+            'des_city_id' => 'required',
+            'des_air' => 'required',
+        ]);
+
+        $datas = array(
+            'company_id' => $company_id,
+            'origin_country_id' => $post['country_id'],
+            'origin_city_id' => $post['city_id'],
+            'origin_airport_id' => $post['air'],
+            'destination_country_id' => $post['des_country_id'],
+            'destination_city_id' => $post['des_city_id'],
+            'destination_airport_id' => $post['des_air'],
+            'modified' => CURRENT_DATETIME,
+        );
+        DB::table('afr_routes')->where('afr_route_id', $post['terminal_rates'])->update($datas);
+        if($this->locale == "es"){
+            return Redirect::to('/es/admin/routeAFR/View')->with('success',$this->freightforwarderMsg['update']);
+        }else{
+            return Redirect::to('/admin/routeAFR/View')->with('success',$this->freightforwarderMsg['update']);
+        }
+    }
+
+    //Ocean Routes start
+    public function viewOceanRoute()
+    {
+        $query =  DB::table('ocean_routes')
+            ->where('ocean_routes.company_id','=',$this->company_id)
+            ->leftjoin('ocean_ports as oport', 'ocean_routes.origin_ocean_port_id', '=', 'oport.ocean_port_id')
+            ->leftjoin('countries as ocountry', 'ocean_routes.origin_country_id', '=', 'ocountry.country_id')
+            ->leftjoin('ocean_ports as dport', 'ocean_routes.destination_ocean_port_id', '=', 'dport.ocean_port_id')
+            ->leftjoin('countries as dcountry', 'ocean_routes.destination_country_id', '=', 'dcountry.country_id')
+            ->leftjoin('terminals as oterminal', 'ocean_routes.origin_terminal_id', '=', 'oterminal.terminal_id')
+            ->leftjoin('terminals as dterminal', 'ocean_routes.destination_terminal_id', '=', 'dterminal.terminal_id')
+            ->leftjoin('ocean_lcl_rates as lclrates', 'lclrates.ocean_route_id', '=', 'ocean_routes.ocean_route_id')
+            ->leftjoin('ocean_fcl_rates as fclrates', 'fclrates.ocean_route_id', '=', 'ocean_routes.ocean_route_id')
+            ->leftjoin('itinerary_ofr', 'itinerary_ofr.ocean_route_id', '=', 'ocean_routes.ocean_route_id')
+            ->select('ocean_routes.*','oport.port_title as oport_title','ocountry.title as ocountry_title','dport.port_title as dport_title','dcountry.title as dcountry_title','oterminal.title as oplace','dterminal.title as dplace','fclrates.carrier as fcarrier_name','lclrates.carrier as lcarrier_name','lclrates.ocean_lcl_rate_id','fclrates.ocean_fcl_rate_id','itinerary_ofr.itinerary_id');
+        if(isset($_GET['search']) && !empty($_GET['search'])){
+            $query = $query->Where(function ($query) {
+                $query->orwhere('oport.port_title','LIKE','%'.$_GET['search'].'%')
+                    ->orwhere('ocountry.title','LIKE','%'.$_GET['search'].'%')
+                    ->orwhere('dport.port_title','LIKE','%'.$_GET['search'].'%')
+                    ->orwhere('dcountry.title','LIKE','%'.$_GET['search'].'%')
+                    ->orwhere('oterminal_col.title','LIKE','%'.$_GET['search'].'%')
+                    ->orwhere('dterminal_col.title','LIKE','%'.$_GET['search'].'%');
+            });
+        }
+        $result = $query->paginate(PAGENATE);
+        //dd($result);
+        return view('admin.route.ocean.view')->with('data',$result);
+    }
+    public function getOceanRoute(Request $request)
+    {
+        $stats['countries'] = DB::table('countries')->select('countries.country_id','countries.title')->where('is_active','=','1')->orderBy('countries.title')->get();
+        $stats['terminals'] = DB::table('ocean_local_terminal_rates as ocltr')
+            ->where('ocltr.user_id','=',$this->user_id)
+            ->leftjoin('cities','ocltr.city_id','=','cities.city_id')
+            ->select('col_city_ports.title as place','ocltr.ocean_local_terminal_rate_id','cities.title as city')
+            ->leftjoin('col_city_ports','ocltr.col_city_port_id','=','col_city_ports.col_city_port_id')
+            ->where('ocltr.is_active','=','1')->get();
+        $stats['ports'] = DB::table('ocean_ports')->select('ocean_ports.ocean_port_id','ocean_ports.port_title')
+            ->where('is_active','=','1')->orderBy('ocean_ports.port_title')->get();
+        
+        // Validation fails
+        $stats['old']['country_id'] = $request->old('country_id');
+        if(@$stats['old']['country_id']){
+            $stats['oports'] = DB::table('ocean_ports')->select('ocean_ports.ocean_port_id','ocean_ports.port_title')
+            ->where('is_active','=','1')->where('country_id','=',$stats['old']['country_id'])->orderBy('ocean_ports.port_title')->get();    
+        }  
+        $stats['old']['origin_ocean_port_id'] = $request->old('origin_ocean_port_id');
+        if(@$stats['old']['origin_ocean_port_id']){
+            $stats['oterminals'] = DB::table('terminals')
+                                    ->where('ocean_port_id','=',$stats['old']['origin_ocean_port_id'])
+                                    ->select('terminals.*')
+                                    ->get();   
+        }   
+        $stats['old']['origin_terminal_id'] = $request->old('origin_terminal_id');  
+
+
+        $stats['old']['des_country_id'] = $request->old('des_country_id'); 
+        if(@$stats['old']['des_country_id']){
+            $stats['dports'] = DB::table('ocean_ports')
+                               ->select('ocean_ports.ocean_port_id','ocean_ports.port_title')
+                                ->where('is_active','=','1')
+                                ->where('country_id','=',$stats['old']['des_country_id'])
+                                ->orderBy('ocean_ports.port_title')
+                                ->get(); 
+                               
+            // dd($stats['dports'] );   
+        }  
+        $stats['old']['destination_ocean_port_id'] = $request->old('destination_ocean_port_id');
+        if(@$stats['old']['destination_ocean_port_id']){
+            $stats['dterminals'] = DB::table('terminals')
+                                    ->where('ocean_port_id','=',$stats['old']['destination_ocean_port_id'])
+                                    ->select('terminals.*')
+                                    ->get();   
+        }   
+        $stats['old']['destination_terminal_id'] = $request->old('destination_terminal_id');  
+         
+        return view('admin.route.ocean.add')->with('stats',$stats);
+    }
+
+    public function addOceanRoute(Request $request) {
+       $company_id = Auth::user()->company_id;
+        
+       $post = $request->all();
+       // dd($post);
+        $this->validate($request, [
+            'country_id' => 'required',
+            'origin_ocean_port_id' => 'required',
+            'origin_terminal_id' => 'required',
+            'des_country_id' => 'required',
+            'destination_ocean_port_id' => 'required',
+            'destination_terminal_id' => 'required',
+        ]);
+        
+        //origin_terminal_id
+        $datas = array(
+            'company_id' => $company_id,
+            'origin_country_id' => $post['country_id'],
+            'origin_ocean_port_id' => $post['origin_ocean_port_id'],
+            'origin_terminal_id' => $post['origin_terminal_id'],
+            'destination_country_id' => $post['des_country_id'],
+            'destination_ocean_port_id' => $post['destination_ocean_port_id'],
+            'destination_terminal_id' => $post['destination_terminal_id'],
+            'created' => CURRENT_DATETIME,
+        );
+
+        $route = DB::table('ocean_routes')
+                              ->select('ocean_routes.ocean_route_id')
+                              ->where('company_id','=',$company_id)
+                              ->where('origin_terminal_id','=',$post['origin_terminal_id'])
+                              ->where('destination_terminal_id','=',$post['destination_terminal_id'])
+                              ->first();
+        if(@$route){
+            if($this->locale == "es"){
+                return Redirect::to('/es/admin/routeOcean/View')->with('info',"Route already exists");
+            }else{
+                return Redirect::to('/admin/routeOcean/View')->with('info',"Route already exists");
+            }
+        }
+
+        //dd($datas);
+        if($ocean_route_id = DB::table('ocean_routes')->insertGetId($datas)){
+            if(@$post['submit_add']){
+                if($this->locale == "es"){
+                    return Redirect::to('/es/admin/oceanFCL/Add/'.$ocean_route_id.'/0/0');
+                }else{
+                    return Redirect::to('/admin/oceanFCL/Add/'.$ocean_route_id.'/0/0');
+                }    
+            }
+            if($this->locale == "es"){
+                return Redirect::to('/es/admin/routeOcean/View')->with('success',$this->freightforwarderMsg['success']);
+            }else{
+                return Redirect::to('/admin/routeOcean/View')->with('success',$this->freightforwarderMsg['success']);
+            }
+        }else{
+            if($this->locale == "es"){
+                return Redirect::to('/es/admin/routeOcean/Add')->with('error',$this->freightforwarderMsg['error']);
+            }else{
+                return Redirect::to('/admin/routeOcean/Add')->with('error',$this->freightforwarderMsg['error']);
+            }
+        }
+    }
+
+    public function deleteOceanRoute($id)
+    {
+        DB::table('ocean_routes')->where('ocean_routes.ocean_route_id','=',$id)->delete();
+        if($this->locale == "es"){
+            return Redirect::to('/es/admin/routeOcean/View')->with('success',$this->freightforwarderMsg['delete']);
+        }else{
+            return Redirect::to('/admin/routeOcean/View')->with('success',$this->freightforwarderMsg['delete']);
+        }
+    }
+    public function geteditOceanRoute($id)
+    {
+        if(!isset($id) && empty($id)){
+            if($this->locale == "es"){
+                return Redirect::to('/es/admin/routeOcean/View');
+            }else{
+                return Redirect::to('/admin/routeOcean/View');
+            }
+        }
+        
+        $stats['data'] = DB::table('ocean_routes')->select('ocean_routes.*')
+            ->where('ocean_routes.ocean_route_id','=',$id)->first();
+
+        $stats['countries'] = DB::table('countries')->select('countries.country_id','countries.title')->orderBy('countries.title')->where('is_active','=','1')
+            ->get();
+        $stats['oports'] = DB::table('ocean_ports')->select('ocean_ports.ocean_port_id','ocean_ports.port_title')
+            ->where('is_active','=','1')->where('country_id','=',$stats['data']->origin_country_id)->orderBy('ocean_ports.port_title','asc')->get();
+        $stats['dports'] = DB::table('ocean_ports')->select('ocean_ports.ocean_port_id','ocean_ports.port_title')
+            ->where('is_active','=','1')->where('country_id','=',$stats['data']->destination_country_id)->orderBy('ocean_ports.port_title','asc')->get();
+        $stats['oterminal'] = DB::table('terminals')->select('terminals.terminal_id','terminals.title')
+            ->where('is_active','=','1')->where('ocean_port_id','=',$stats['data']->origin_ocean_port_id)->get();
+        $stats['dterminal'] = DB::table('terminals')->select('terminals.terminal_id','terminals.title')
+            ->where('is_active','=','1')->where('ocean_port_id','=',$stats['data']->destination_ocean_port_id)->get();    
+        
+          
+        return view('admin.route.ocean.edit')->with('stats',$stats);
+    }
+    public function editOceanRoute(Request $request)
+    {
+
+        $post = $request->all();
+        //dd($post);
+        $company_id = Auth::user()->company_id;
+        $this->validate($request, [
+            'country_id' => 'required',
+            'origin_ocean_port_id' => 'required',
+            'origin_terminal_id' => 'required',
+            'des_country_id' => 'required',
+            'destination_ocean_port_id' => 'required',
+            'destination_terminal_id' => 'required',
+        ]);
+
+        $datas = array(
+            'company_id' => $company_id,
+            'origin_country_id' => $post['country_id'],
+            'origin_ocean_port_id' => $post['origin_ocean_port_id'],
+            'origin_terminal_id' => $post['origin_terminal_id'],
+            'destination_country_id' => $post['des_country_id'],
+            'destination_ocean_port_id' => $post['destination_ocean_port_id'],
+            'destination_terminal_id' => $post['destination_terminal_id'],
+            'modified' => CURRENT_DATETIME,
+        );
+        DB::table('ocean_routes')->where('ocean_route_id', $post['ocean_route_id'])->update($datas);
+        if($this->locale == "es"){
+            return Redirect::to('/es/admin/routeOcean/View')->with('success',$this->freightforwarderMsg['update']);
+        }else{
+            return Redirect::to('/admin/routeOcean/View')->with('success',$this->freightforwarderMsg['update']);
+        }
+    }
+    // Ocean route end
+
+    // COLOMBIA Route start
+    public function viewColombiaRoute()
+    {
+        $query =  DB::table('col_routes')
+            ->where('col_routes.company_id','=',$this->company_id)
+            ->leftjoin('cities as ocities', 'ocities.city_id', '=', 'col_routes.org_city_id')
+            ->leftjoin('cities as dcities', 'dcities.city_id', '=', 'col_routes.dest_city_id')
+            ->leftjoin('col_departments as ocd', 'ocd.col_department_id', '=', 'col_routes.org_col_department_id')
+            ->leftjoin('col_departments as dcd', 'dcd.col_department_id', '=', 'col_routes.dest_col_department_id')
+            ->leftjoin('col_rates as rates', 'rates.col_route_id', '=', 'col_routes.col_route_id')
+            ->select('col_routes.*','ocities.title as ocity','dcities.title as dcity',
+                'ocd.name as odep_name','ocd.zipcode as odep_zipcode','dcd.name as ddep_name','dcd.zipcode as ddep_zipcode','rates.col_rate_id')
+            ->orderBy('ocities.title','asc');
+        if(isset($_GET['search']) && !empty($_GET['search'])){
+            $query = $query->Where(function ($query) {
+                $query->orwhere('col_routes.dta_otm','LIKE','%'.$_GET['search'].'%')
+                    ->orwhere('ocities.title','LIKE','%'.$_GET['search'].'%')
+                    ->orwhere('dcities.title','LIKE','%'.$_GET['search'].'%')
+                    ->orwhere('ocd.name','LIKE','%'.$_GET['search'].'%')
+                    ->orwhere('dcd.name','LIKE','%'.$_GET['search'].'%')
+                    ->orwhere('ocd.zipcode','LIKE','%'.$_GET['search'].'%')
+                    ->orwhere('dcd.zipcode','LIKE','%'.$_GET['search'].'%');
+            });
+            
+        }
+        $result = $query->paginate(PAGENATE);
+        //dd($result);
+        return view('admin.route.colombia.view')->with('data',$result);
+    }
+    public function getColombiaRoute()
+    {
+        $stats['cities'] = DB::table('cities')->select('cities.city_id','cities.title')->where('country_id','=','42')->where('is_active','=','1') ->orderBy('cities.title')->get();
+        $stats['departments'] = DB::table('col_departments')->select('col_departments.name','col_departments.col_department_id','col_departments.zipcode')
+            ->where('col_departments.is_active','=','1')
+            ->orderBy('col_departments.name')->get();
+        return view('admin.route.colombia.add')->with('stats',$stats);
+    }
+
+    public function addColombiaRoute(Request $request) {
+       $company_id = Auth::user()->company_id;
+        $post = $request->all();
+        $this->validate($request, [
+            'org_city_id' => 'required',
+            'org_col_department_id' => 'required',
+            'dest_city_id' => 'required',
+            'dest_col_department_id' => 'required',
+            'dta_otm' => 'required',
+        ]);
+
+        $route = DB::table('col_routes')
+                              ->select('col_routes.col_route_id')
+                              ->where('company_id','=',$company_id)
+                              ->where('org_col_department_id','=',$post['org_col_department_id'])
+                              ->where('dest_col_department_id','=',$post['dest_col_department_id'])
+                              ->first();
+        if(@$route){
+            if($this->locale == "es"){
+                return Redirect::to('/es/admin/routeColombia/View')->with('info',"Route already exists");
+            }else{
+                return Redirect::to('/admin/routeColombia/View')->with('info',"Route already exists");
+            }
+        }
+        $datas = array(
+            'company_id'=>$company_id,
+            'org_city_id' => $post['org_city_id'],
+            'org_col_department_id' => $post['org_col_department_id'],
+            'dest_city_id' => $post['dest_city_id'],
+            'dest_col_department_id' => $post['dest_col_department_id'],
+            'dta_otm' => $post['dta_otm'],
+            'created' => CURRENT_DATETIME,
+        );
+        //dd($datas);
+        if($col_route_id = DB::table('col_routes')->insertGetId($datas)){
+           if(@$post['submit_add']){
+                if($this->locale == "es"){
+                    return Redirect::to('/es/admin/colombiaRates/Add/'.$col_route_id.'/0/0');
+                }else{
+                    return Redirect::to('/admin/colombiaRates/Add/'.$col_route_id.'/0/0');
+                }
+           }
+           if($this->locale == "es"){
+                return Redirect::to('/es/admin/routeColombia/View')->with('success',$this->freightforwarderMsg['success']);
+            }else{
+                return Redirect::to('/admin/routeColombia/View')->with('success',$this->freightforwarderMsg['success']);
+            }
+        }else{
+            if($this->locale == "es"){
+                return Redirect::to('/es/admin/routeColombia/Add')->with('error',$this->freightforwarderMsg['error']);
+            }else{
+                return Redirect::to('/admin/routeColombia/Add')->with('error',$this->freightforwarderMsg['error']);
+            }
+        }
+    }
+
+    public function deleteColombiaRoute($id)
+    {
+        DB::table('col_routes')->where('col_routes.col_route_id','=',$id)->delete();
+        return Redirect::to('admin/routeColombia/View')->with('success',$this->freightforwarderMsg['delete']);
+        if($this->locale == "es"){
+            return Redirect::to('/es/admin/routeColombia/View')->with('success',$this->freightforwarderMsg['delete']);
+        }else{
+            return Redirect::to('/admin/routeColombia/View')->with('success',$this->freightforwarderMsg['delete']);
+        }
+    }
+    public function geteditColombiaRoute($id)
+    {
+        if(!isset($id) && empty($id)){
+            if($this->locale == "es"){
+                return Redirect::to('/es/admin/routeOcean/View');
+            }else{
+                return Redirect::to('/admin/routeOcean/View');
+            }
+        }
+        
+        $stats['data'] = DB::table('col_routes')->select('col_routes.*')
+            ->where('col_routes.col_route_id','=',$id)->first();
+        //dd($stats['data']);   
+        $stats['cities'] = DB::table('cities')->select('cities.city_id','cities.title')
+                           ->where('country_id','=','42')
+                           ->where('is_active','=','1')
+                           ->orderBy('cities.title')
+        ->get();
+        if(@$stats['data']){
+            $stats['odepartments'] = DB::table('col_departments')->select('col_departments.name','col_departments.zipcode','col_departments.col_department_id')
+            ->where('city_id','=',$stats['data']->org_city_id)
+            ->where('is_active','=','1')
+            ->orderBy('col_departments.name')
+            ->get();
+            $stats['ddepartments'] = DB::table('col_departments')->select('col_departments.name','col_departments.zipcode','col_departments.col_department_id')
+            ->where('city_id','=',$stats['data']->dest_city_id)
+            ->where('is_active','=','1')
+            ->orderBy('col_departments.name')
+            ->get();
+        }
+        
+           // dd($stats);
+        return view('admin.route.colombia.edit')->with('stats',$stats);
+    }
+    public function editColombiaRoute(Request $request)
+    {
+        $post = $request->all();
+        $company_id = Auth::user()->company_id;
+        $this->validate($request, [
+            'org_city_id' => 'required',
+            'org_col_department_id' => 'required',
+            'dest_city_id' => 'required',
+            'dest_col_department_id' => 'required',
+            'dta_otm' => 'required',
+        ]);
+
+        $datas = array(
+            'company_id'=>$company_id,
+            'org_city_id' => $post['org_city_id'],
+            'org_col_department_id' => $post['org_col_department_id'],
+            'dest_city_id' => $post['dest_city_id'],
+            'dest_col_department_id' => $post['dest_col_department_id'],
+            'dta_otm' => $post['dta_otm'],
+            'modified' => CURRENT_DATETIME,
+        );
+        DB::table('col_routes')->where('col_route_id', $post['route_id'])->update($datas);
+        if($this->locale == "es"){
+            return Redirect::to('/es/admin/routeColombia/View')->with('success',$this->freightforwarderMsg['update']);
+        }else{
+            return Redirect::to('/admin/routeColombia/View')->with('success',$this->freightforwarderMsg['update']);
+        }
+    }
+    // COLOMBIA route end
+
+    //fetach air routes
+    public function getAirRoutes(Request $request)
+    {
+        $post = $request->all();
+        //dd($post);
+        $country = $post['country_id'];
+        $city = $post['city_id'];
+        $air = $post['air'];
+        $dcountry = $post['destination_country_id'];
+        $dcity = $post['destination_city_id'];
+        $dair = $post['destination_airport_id'];
+        $company_id = Auth::user()->company_id;
+        $query = DB::table('afr_routes')->select('afr_routes.*','countries.title as country','cities.title as city',
+            'airports.name','airports.iata_code')
+            ->where('afr_routes.company_id','=',$this->company_id)
+            ->where('afr_routes.origin_country_id','=',$country)->where('afr_routes.origin_city_id','=',$city)
+            ->where('afr_routes.origin_airport_id','=',$air)
+            ->where('afr_routes.company_id','=',$company_id)
+            ->where('afr_routes.destination_country_id','=',$dcountry)->where('afr_routes.destination_city_id','=',$dcity)
+            ->where('afr_routes.destination_airport_id','=',$dair)
+            ->leftjoin('countries','afr_routes.destination_country_id','=','countries.country_id')
+            ->leftjoin('cities','afr_routes.destination_city_id','=','cities.city_id')
+            ->leftjoin('airports','afr_routes.destination_airport_id','=','airports.airport_id');
+        $stats = $query->first();
+
+        if($stats){
+
+            $return['success'] = true;
+            $countryOpp = $stats->afr_route_id;
+            if(@$post['routeItinerary']){
+                
+                $rates_id = DB::table('itinerary')->select('itinerary.itinerary_id')
+                    ->where('itinerary.afr_route_id','=',$countryOpp)->first();
+                if($rates_id){                    
+                    $return['itinerary_id'] = $rates_id->itinerary_id;
+                }
+                else{
+                    $rates_id = DB::table('afr_route_rates')->select('afr_route_rates.afr_route_rates_id')
+                        ->where('afr_route_rates.afr_route_id','=',$countryOpp)->first();
+                    //dd($rates_id);    
+                    if($rates_id){
+                        //dd($post); 
+                        $return['success'] = true;
+                        $countryOpp = $stats->afr_route_id;
+                        $return['irates_id'] = $rates_id->afr_route_rates_id;
+                    }else{
+
+                      $return['success'] = false; 
+                      $addRoute = BASE_URL.'/admin/tarifasAFR/Add/'.$countryOpp.'/0/0';
+                      $countryOpp = "<div class='form-group has-feedback'><label for='minium_rate' class='col-sm-3 control-label'>Routes:</label><div class='col-sm-9'><span class='label label-danger'>No Rates Found </span><a class='btn btn-default' href='".$addRoute."'>Add AFR Route</a></div></div>";  
+                    }
+                }
+            }
+            
+        }else{
+            $return['success'] = false; $addRoute = BASE_URL.'/admin/routeAFR/Add';
+            $countryOpp = "<div class='form-group has-feedback'><label for='minium_rate' class='col-sm-3 control-label'>Routes:</label><div class='col-sm-9'><span class='label label-danger'>No Record Found </span><a class='btn btn-default' href='".$addRoute."'>Add AFR Route</a></div></div>";
+        }
+        $return['data'] = $countryOpp;
+        return json_encode($return);
+    }
+    //fetach Ocean routes
+    public function getOceanRoutes(Request $request)
+    {
+        $post = $request->all();
+        $origin_country_id = $post['country_id'];
+        $origin_ocean_port_id = $post['origin_ocean_port_id'];
+        $origin_terminal_id = $post['origin_terminal_id'];
+        $destination_country_id = $post['des_country_id'];
+        $destination_ocean_port_id = $post['destination_ocean_port_id'];
+        $destination_terminal_id = $post['destination_terminal_id'];
+        $company_id = Auth::user()->company_id;
+
+        $query = DB::table('ocean_routes')->select('ocean_routes.*','countries.title as country','ocean_ports.port_title')
+            ->where('ocean_routes.company_id','=',$this->company_id)
+            ->where('ocean_routes.origin_country_id','=',$origin_country_id)
+            ->where('ocean_routes.origin_ocean_port_id','=',$origin_ocean_port_id)
+            ->where('ocean_routes.origin_terminal_id','=',$origin_terminal_id)
+            ->where('ocean_routes.destination_country_id','=',$destination_country_id)
+            ->where('ocean_routes.destination_ocean_port_id','=',$destination_ocean_port_id)
+            ->where('ocean_routes.destination_terminal_id','=',$destination_terminal_id)
+            ->leftjoin('countries','ocean_routes.destination_country_id','=','countries.country_id')
+            ->leftjoin('ocean_ports','ocean_routes.destination_ocean_port_id','=','ocean_ports.ocean_port_id')
+            ->leftjoin('ocean_local_terminal_rates','ocean_routes.destination_terminal_id','=','ocean_local_terminal_rates.ocean_local_terminal_rate_id');
+        $stats = $query->first();
+		
+
+        if($stats){
+            $return['success'] = true;
+            $countryOpp = $stats->ocean_route_id;
+            if(@$post['addofrItinerary']){
+
+                $ocean_fcl_rates = DB::table('ocean_fcl_rates')->where('ocean_route_id', $stats->ocean_route_id)->count();
+                $ocean_lcl_rates = DB::table('ocean_lcl_rates')->where('ocean_route_id', $stats->ocean_route_id)->count();
+                if((@$ocean_fcl_rates) || (@$ocean_lcl_rates)){
+                    $return['addofrItinerary'] = $countryOpp;
+                }else{
+                    $return['success'] = false; 
+                    $addLCLRate = BASE_URL.'/admin/oceanLCL/Add/0/0/0';
+                    $addFCLRate = BASE_URL.'/admin/oceanFCL/Add/0/0/0';
+                    $countryOpp = "<div class='form-group has-feedback'><label for='minium_rate' class='col-sm-3 control-label'>Routes:</label><div class='col-sm-9'><span class='label label-danger'>No Rates Found </span><a class='btn btn-default' href='".$addLCLRate."'>Add LCL Rate</a> <a class='btn btn-default' href='".$addFCLRate."'>Add FCL Rate</a></div></div>";
+                }
+                
+            }
+        }else{
+            $return['success'] = false; $addRoute = BASE_URL.'/admin/routeOcean/Add';
+            $countryOpp = "<div class='form-group has-feedback'><label for='minium_rate' class='col-sm-3 control-label'>Routes:</label><div class='col-sm-9'><span class='label label-danger'>No Recode Found </span><a class='btn btn-default' href='".$addRoute."'>Add Ocean Route</a></div></div>";
+        }
+        $return['data'] = $countryOpp;
+        return json_encode($return);
+    }
+
+    //fetach colombia routes
+    public function getColombiaRoutes(Request $request)
+    {
+        $post = $request->all();
+        
+        $org_city_id = $post['org_city_id'];
+        $org_col_department_id = $post['org_col_department_id'];
+        $dest_city_id = $post['dest_city_id'];
+        $dest_col_department_id = $post['dest_col_department_id'];
+        //$dta_otm = $post['dta_otm'];
+        $company_id = Auth::user()->company_id;
+
+        $query = DB::table('col_routes')->select('col_routes.*')
+            ->where('col_routes.company_id','=',$this->company_id)
+            ->where('col_routes.org_city_id','=',$org_city_id)
+            ->where('col_routes.org_col_department_id','=',$org_col_department_id)
+            ->where('col_routes.dest_city_id','=',$dest_city_id)
+            ->where('col_routes.dest_col_department_id','=',$dest_col_department_id);
+           // ->where('col_routes.dta_otm','=',$dta_otm);
+        $stats = $query->first();
+
+        if($stats){
+            $return['success'] = true;
+            $countryOpp = $stats->col_route_id;
+        }else{
+            $return['success'] = false; $addRoute = BASE_URL.'/admin/routeColombia/Add';
+            $countryOpp = "<div class='form-group has-feedback'><label for='minium_rate' class='col-sm-3 control-label'>Routes:</label><div class='col-sm-9'><span class='label label-danger'>No Recode Found </span><a class='btn btn-default' href='".$addRoute."'>Add Ocean Route</a></div></div>";
+        }
+        $return['data'] = $countryOpp;
+        return json_encode($return);
+    }
+
+}

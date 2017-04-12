@@ -1,0 +1,2544 @@
+/**************************************************414**********************************************/
+
+@media only screen and (max-device-width : 414px) {
+
+.importtype .inputButtons {
+    display: inline-block;
+    width: auto;
+    background: #D8D9DB;
+    margin: 10px 0px;
+}
+
+.nav.navbar-nav.navigations a 
+{
+    font-size: 13px;
+    padding: 6px;
+}
+ 
+#navbar .navigations 
+{
+    margin-bottom: 10px;
+    margin-left: 0;
+    margin-top: 5px;
+}
+.main .navigations > li 
+{
+    float: left;
+    padding: 0;
+    text-align: center;
+    width: 100%;
+}
+
+.translation.translate
+ {
+    margin-right: 8px;
+}
+
+.main .navbarright 
+{
+    margin: 0;
+}
+
+.logo > img 
+{
+    margin-left: 15px;
+}
+
+.frieghtForwarder 
+{
+    top: 430px;
+    width: 100%;
+}
+
+#typed 
+{
+    font-size: 14px;
+}
+.main .nav.navbar-nav.navbar-right.navbarright
+{
+	margin-top:0px;
+}
+
+.navbar2 .navbar-background
+ {
+    background: #0054A6;
+    margin-left: 0;
+    margin-top: 55px;
+    margin-right: 0px;
+}
+
+.nav.navbar-nav.navbar-right.importright
+ {
+    background: #0054a6;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 50px;
+}
+
+.icheck
+{
+    padding: 0px;
+}
+
+.forgot
+ {
+    padding: 0px;
+}
+
+.forgot a
+ {
+	 font-size:12px;
+}
+
+.user-label
+{
+	font-size:14px;
+}
+
+.scroll-width 
+{
+    overflow-x: scroll;
+    width: 100%;
+}
+
+.modal-body.modaltext
+ {
+    overflow: scroll;
+    width: 100%;
+}
+
+.box-footers .left_footer .btn
+{
+	margin: 5px auto !important;
+    font-size: 12px;
+    width: 100%;
+}
+
+.afr-label
+{
+	padding:0px;
+}
+
+.routeafr-add 
+{
+    padding: 5px 0px;
+}
+
+.navbar2 .nav.navbar-nav.navbar-right.importright a 
+{
+   padding: 14px 2px;
+   font-size: 12px;
+}
+
+.airportint .backbtn
+ {
+    margin-right: 0px;
+}
+
+.airport-rates .modal-body.modaltext
+ {
+    overflow: scroll;
+    width: 100%;
+}
+
+.pdleft0
+ {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.modalhead h4.modal-title 
+{
+    font-size: 12px;
+}
+
+.panel-default .modaltext .borders
+ {
+    min-width: auto;
+}
+
+.modaltext table
+ {
+    width: 100%;
+}
+
+.airShipping {
+    padding: 0;
+}
+.maritime-top .control-label.textfont.formleft {
+    padding: 0 0px;
+}
+.maritime .backbtn {
+    width: 100%;
+    margin-top: 10px;
+    padding: 0px;
+	margin-right:0px;
+	font-size: 13px;
+}
+
+.form-group.maritime{
+    margin-right: 0;
+    margin-left: 0;
+}
+
+a.tooltips.textformation.load-type-js.activetab {
+    padding: 15px 0px;
+}
+a.tooltips.textformation.load-type-js {
+    padding: 15px 0;
+}
+.maritime-input {
+    padding: 0;
+}
+.airShippings a.buttonSlide1 {
+    margin-bottom: 20px;
+}
+
+.registeration .Rowaire .panel-default .form-horizontal .form-group input[type="file"]
+{
+    font-size: 11px;
+}
+.Rowaire .shareholder {
+    margin-bottom: 5px;
+}
+
+.registeration .box-footers .left_footer .btn
+{
+	margin-bottom:0px;
+	width:auto;
+}
+
+.booking .addition{ overflow:scroll;} 
+
+.booking .userfont{
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+.navbar2 .internal-container .navbar-header{ margin-right:0px; margin-left:0px;}
+.internal-container {
+    padding: 5px;
+}
+.nav.navbar-nav.navbar-right.importright a .socials {
+    font-size: 16px;
+}
+.navbar2 .nav.navbar-nav.navbar-right.importright .importtranslation {
+    padding: 15px 2px;
+}
+.white .navbar2 .nav.navbar-nav.navbar-right.importright .importsigns {
+    padding: 16px 1px;
+    font-size: 11px;
+}
+.user-logged {
+    margin-top: 15px;
+    font-size: 12px;
+}
+.translationss img {
+    margin-right: 0px;
+}
+.quoteborder {
+    min-height: 80px;
+}
+.servicetype .inputButtons {
+    margin: 0;
+}
+.servicetype .innerBgs {
+    width: 240px;
+}
+.nav.navbar-nav.navbar-right.navbarright a {
+    font-size: 14px;
+    padding: 9px 2px;
+}
+.mainback .translation.translate {
+    margin-right: 0px;
+}
+.outter-container{ padding-right:5px; padding-left:5px;}
+
+.nav.navbar-nav.navbar-right.navbarright.usericons a {
+    font-size: 14px;
+    padding: 9px 1px;
+}
+
+.cargoinput {
+	padding-right:0px;
+	padding-left:0px;
+	margin-top: 10px;
+}
+.add-other-fields-js .cargo-link {
+    padding: 5px 5px;
+}
+.new-user .btn-flat {
+    font-size: 12px;
+}
+.buttonSlide1 {
+    padding: 12px 10px;
+}
+.tracklist {
+    padding: 0;
+}
+.trackinput {
+	width: 65%;
+}
+.buttonSlide span {
+    border: 1px solid #fff;
+    border-radius: 5px;
+    font-size: 12px;
+    padding: 13px;
+}
+
+.buttonSlide 
+{
+    padding: 21px 10px;
+}
+
+.table-responsive.userfont {
+    border: 1px solid transparent;
+}
+.zooming-effect {
+    margin-bottom: 20px;
+}
+.cargotitle {
+    line-height: 35px;
+    font-size: 11px;
+    margin-top: 10px;
+}
+
+.box-footers .left_footer .backbtn {
+    font-size: 12px;
+	width:100%;
+}
+.box-footers .left_footer .ml10 {
+    margin-left: 0;
+	font-size: 12px;
+	width:100%;
+}
+.box-footers .hideDiv.previous {
+    font-size: 12px;
+    width: 100%;
+	margin: 0 auto !important;
+}
+#ui-id-3, #ui-id-2, #ui-id-6, #ui-id-4{
+    padding: 10px 15px;
+}
+.tarifascol-right {
+    float: left;
+}
+
+.edittfrfcl .input-group{
+	margin-bottom:10px;
+}
+.left_footer.btn.btn-default {
+    width: 100%;
+    font-size: 12px;
+    margin: 0 auto !important;
+}
+.input-group.ettime select.form-control {
+    width: auto;
+}
+.navbar-nav .open .dropdown-menu {
+    position: absolute;
+    background-color: #fff;
+}
+}
+/************************************415-767****************************************/
+
+@media only screen and (min-width : 415px) and (max-width : 767px) {
+	
+.table-responsive{
+   border:1px solid transparent;
+}
+
+.main .navbar-default .navbar-toggle .icon-bar 
+{
+    background-color: #fff;
+}
+
+.main .navbar2 .navbar-header .navbar-toggle .icon-bar
+ {
+    background-color: #888;
+} 
+
+.main .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus
+{
+    background-color: transparent;
+}
+.main .nav > li 
+{
+    float: left;
+    padding: 0;
+}
+.main .nav.navbar-nav.navbar-right.navbarright {
+    float: right;
+    padding-right: 15px;
+    padding-top: 5px;
+	margin-top: 0;
+}
+.logo 
+{
+    margin-left: 10px;
+}
+
+.frieghtForwarder 
+{
+    width: 100%;
+	top: 360px;
+}
+#navbar .navigations {
+    margin-top: 0px;
+    margin-bottom: 0;
+    margin-left: 0;
+	float: right;
+}
+.tracklist{padding:0px;}
+
+.leftMenuSecurity aside.main-sidebar
+{ 
+-ms-transform: translate(0px,0px); /* IE 9 */ 
+ -webkit-transform: translate(0px,0px); /* Safari */ 
+ transform: translate(0px,0px);
+}
+
+.navbar2 .navbar-background
+ {
+	background: #0054A6;
+	margin-left: 0;
+	margin-top: 55px;
+	margin-right: 0px;
+}
+
+.nav.navbar-nav.navbar-right.importright
+ {
+    background: #0054a6;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 50px;
+}
+
+.icheck
+{
+    padding: 0px;
+}
+
+.forgot 
+{
+    padding: 0px;
+}
+
+.scroll-width 
+{
+    overflow-x: scroll;
+    width: 100%;
+}
+
+.modal-body.modaltext
+{
+    overflow: hidden;
+    width: 100%;
+}
+
+.pdleft0
+ {
+    padding-left: 0;
+    padding-right: 0;
+}
+.panel-default .modaltext .borders 
+{
+    min-width: auto;
+}
+
+.modaltext table 
+{
+    width: 100%;
+}
+
+.box-height span {
+    margin: 35px;
+}
+.internal-container {
+    padding: 10px;
+}
+.navbar2 .nav.navbar-nav.navbar-right.importright a {
+    padding: 14px 4px;
+}
+.translationss img {
+    margin-right: 0;
+}
+.navbar2 .internal-container .navbar-header{ margin-right:0px; margin-left:0px;}
+.booking .userfont {
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+.quoteborder {
+    min-height: 70px;
+} 
+.maritime-input {
+    padding: 0;
+}
+.airfreight-input {
+    padding: 0;
+}
+.trackinput {
+    width: 73%;
+}
+.buttonSlide span {
+    padding: 15px 10px;
+    font-size: 12px;
+}
+.innerBgs {
+    padding: 0;
+}
+.table-responsive.userfont {
+    border: 1px solid transparent;
+}
+.zooming-effect {
+    margin-bottom: 15px;
+}
+.maritime .frieght-input {
+    width: 85%;
+    margin-bottom: 10px;
+}
+.maritime .backbtn {
+    width: 85%;
+	margin-right:0px;
+}
+.userview .progressbar ol.progtrckr li.istLi, .uploaddoc .progressbar ol.progtrckr li.istLi, .downloaddoc .progressbar ol.progtrckr li.istLi, .optional .progressbar ol.progtrckr li.istLi, .payment .progressbar ol.progtrckr li.istLi, .booking .progressbar ol.progtrckr li.istLi, .quotesummary .progressbar ol.progtrckr li.istLi, .cargo .progressbar ol.progtrckr li.istLi, .additional-info .progressbar ol.progtrckr li.istLi{ width:100%;} 
+
+.userview .progressbar ol.progtrckr li.scndLi, .uploaddoc .progressbar ol.progtrckr li.scndLi, .downloaddoc .progressbar ol.progtrckr li.scndLi, .optional .progressbar ol.progtrckr li.scndLi, .payment .progressbar ol.progtrckr li.scndLi, .booking .progressbar ol.progtrckr li.scndLi, .quotesummary .progressbar ol.progtrckr li.scndLi, .cargo .progressbar ol.progtrckr li.scndLi, .additional-info .progressbar ol.progtrckr li.scndLi, .additional-info .progressbar ol.progtrckr li.scndLi{ width:100%;} 
+
+.userview .progressbar ol.progtrckr li.thrdLi, .uploaddoc .progressbar ol.progtrckr li.thrdLi, .downloaddoc .progressbar ol.progtrckr li.thrdLi, .optional .progressbar ol.progtrckr li.thrdLi, .payment .progressbar ol.progtrckr li.thrdLi, .booking .progressbar ol.progtrckr li.thrdLi, .quotesummary .progressbar ol.progtrckr li.thrdLi, .cargo .progressbar ol.progtrckr li.thrdLi, .additional-info .progressbar ol.progtrckr li.thrdLi{ width:100%;} 
+
+.userview .progressbar ol.progtrckr li.frthLi, .uploaddoc .progressbar ol.progtrckr li.frthLi, .downloaddoc .progressbar ol.progtrckr li.frthLi, .optional .progressbar ol.progtrckr li.frthLi, .payment .progressbar ol.progtrckr li.frthLi, .booking .progressbar ol.progtrckr li.frthLi, .quotesummary .progressbar ol.progtrckr li.frthLi, .cargo .progressbar ol.progtrckr li.frthLi, .additional-info .progressbar ol.progtrckr li.frthLi{ width:100%;} 
+
+.userview .progressbar ol.progtrckr li.ffthLi, .uploaddoc .progressbar ol.progtrckr li.ffthLi, .downloaddoc .progressbar ol.progtrckr li.ffthLi, .optional .progressbar ol.progtrckr li.ffthLi, .payment .progressbar ol.progtrckr li.ffthLi, .booking .progressbar ol.progtrckr li.ffthLi, .quotesummary .progressbar ol.progtrckr li.ffthLi, .cargo .progressbar ol.progtrckr li.ffthLi, .additional-info .progressbar ol.progtrckr li.ffthLi{ width:100%;} 
+
+.userview .progressbar ol.progtrckr li.sxthLi, .uploaddoc .progressbar ol.progtrckr li.sxthLi, .downloaddoc .progressbar ol.progtrckr li.sxthLi, .optional .progressbar ol.progtrckr li.sxthLi, .payment .progressbar ol.progtrckr li.sxthLi, .booking .progressbar ol.progtrckr li.sxthLi, .quotesummary .progressbar ol.progtrckr li.sxthLi, .cargo .progressbar ol.progtrckr li.sxthLi, .additional-info .progressbar ol.progtrckr li.sxthLi{ width:100%;} 			
+
+.userview .progressbar ol.progtrckr li.svthLi, .uploaddoc .progressbar ol.progtrckr li.svthLi, .downloaddoc .progressbar ol.progtrckr li.svthLi, .optional .progressbar ol.progtrckr li.svthLi, .payment .progressbar ol.progtrckr li.svthLi, .booking .progressbar ol.progtrckr li.svthLi, .quotesummary .progressbar ol.progtrckr li.svthLi, .cargo .progressbar ol.progtrckr li.svthLi, .additional-info .progressbar ol.progtrckr li.svthLi{ width:100%;}
+
+.box-footers .left_footer .backbtn {
+	width:100%;
+	margin: 5px 0;
+}
+.box-footers .left_footer .ml10 {
+	width:100%;
+	margin: 5px 0;
+}
+#ui-id-3, #ui-id-2, #ui-id-6, #ui-id-4 {
+    padding: 10px 15px;
+}
+.tarifascol-right {
+    float: left;
+}
+.box-footers .hideDiv.previous {
+    font-size: 12px;
+    width: 100%;
+	margin: 0 auto !important;
+}
+.box-footers .left_footer .btn
+{
+	margin: 5px auto !important;
+    font-size: 12px;
+    width: 100%;
+}	
+.navbar-nav .open .dropdown-menu {
+    position: absolute;
+    background-color: #fff;
+}
+}
+
+/*--------------------------------------320-480----------------------------------*/
+
+@media only screen and (min-width : 320px) and (max-width : 480px) {
+
+.userview .progressbar ol.progtrckr li.istLi, .uploaddoc .progressbar ol.progtrckr li.istLi, .downloaddoc .progressbar ol.progtrckr li.istLi, .optional .progressbar ol.progtrckr li.istLi, .payment .progressbar ol.progtrckr li.istLi, .booking .progressbar ol.progtrckr li.istLi, .quotesummary .progressbar ol.progtrckr li.istLi, .cargo .progressbar ol.progtrckr li.istLi, .additional-info .progressbar ol.progtrckr li.istLi{ width:100%;} 
+
+.userview .progressbar ol.progtrckr li.scndLi, .uploaddoc .progressbar ol.progtrckr li.scndLi, .downloaddoc .progressbar ol.progtrckr li.scndLi, .optional .progressbar ol.progtrckr li.scndLi, .payment .progressbar ol.progtrckr li.scndLi, .booking .progressbar ol.progtrckr li.scndLi, .quotesummary .progressbar ol.progtrckr li.scndLi, .cargo .progressbar ol.progtrckr li.scndLi, .additional-info .progressbar ol.progtrckr li.scndLi, .additional-info .progressbar ol.progtrckr li.scndLi{ width:100%;} 
+
+.userview .progressbar ol.progtrckr li.thrdLi, .uploaddoc .progressbar ol.progtrckr li.thrdLi, .downloaddoc .progressbar ol.progtrckr li.thrdLi, .optional .progressbar ol.progtrckr li.thrdLi, .payment .progressbar ol.progtrckr li.thrdLi, .booking .progressbar ol.progtrckr li.thrdLi, .quotesummary .progressbar ol.progtrckr li.thrdLi, .cargo .progressbar ol.progtrckr li.thrdLi, .additional-info .progressbar ol.progtrckr li.thrdLi{ width:100%;} 
+
+.userview .progressbar ol.progtrckr li.frthLi, .uploaddoc .progressbar ol.progtrckr li.frthLi, .downloaddoc .progressbar ol.progtrckr li.frthLi, .optional .progressbar ol.progtrckr li.frthLi, .payment .progressbar ol.progtrckr li.frthLi, .booking .progressbar ol.progtrckr li.frthLi, .quotesummary .progressbar ol.progtrckr li.frthLi, .cargo .progressbar ol.progtrckr li.frthLi, .additional-info .progressbar ol.progtrckr li.frthLi{ width:100%;} 
+
+.userview .progressbar ol.progtrckr li.ffthLi, .uploaddoc .progressbar ol.progtrckr li.ffthLi, .downloaddoc .progressbar ol.progtrckr li.ffthLi, .optional .progressbar ol.progtrckr li.ffthLi, .payment .progressbar ol.progtrckr li.ffthLi, .booking .progressbar ol.progtrckr li.ffthLi, .quotesummary .progressbar ol.progtrckr li.ffthLi, .cargo .progressbar ol.progtrckr li.ffthLi, .additional-info .progressbar ol.progtrckr li.ffthLi{ width:100%;} 
+
+.userview .progressbar ol.progtrckr li.sxthLi, .uploaddoc .progressbar ol.progtrckr li.sxthLi, .downloaddoc .progressbar ol.progtrckr li.sxthLi, .optional .progressbar ol.progtrckr li.sxthLi, .payment .progressbar ol.progtrckr li.sxthLi, .booking .progressbar ol.progtrckr li.sxthLi, .quotesummary .progressbar ol.progtrckr li.sxthLi, .cargo .progressbar ol.progtrckr li.sxthLi, .additional-info .progressbar ol.progtrckr li.sxthLi{ width:100%;} 			
+
+.userview .progressbar ol.progtrckr li.svthLi, .uploaddoc .progressbar ol.progtrckr li.svthLi, .downloaddoc .progressbar ol.progtrckr li.svthLi, .optional .progressbar ol.progtrckr li.svthLi, .payment .progressbar ol.progtrckr li.svthLi, .booking .progressbar ol.progtrckr li.svthLi, .quotesummary .progressbar ol.progtrckr li.svthLi, .cargo .progressbar ol.progtrckr li.svthLi, .additional-info .progressbar ol.progtrckr li.svthLi{ width:100%;}
+
+.tabeltop{padding:0px;}
+
+.leftMenuSecurity aside.main-sidebar{ 
+	-ms-transform: translate(0px,0px); /* IE 9 */
+    -webkit-transform: translate(0px,0px); /* Safari */
+    transform: translate(0px,0px);
+}
+
+.userview .panel-default .table-responsive {
+	border: 1px solid transparent;
+	padding: 0;
+}
+
+.navigationBar
+{
+	display: inline-block;
+}
+
+.navbarright > li 
+{
+    float: left;
+    position: relative;
+}
+
+.main .navbar-default .navbar-toggle .icon-bar
+ {
+    background-color: #fff;
+}
+
+.main .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus
+ {
+    background-color:transparent;
+}
+
+.main .nav.navbar-nav.navigations 
+{
+    margin: 0;
+}
+
+.main .nav > li 
+{
+    float: left;
+    padding: 0;
+	margin-right: 2px;
+}
+
+.main .importleft li {
+    float: none;
+    text-align: center;
+	width:100%;
+}
+
+.services .grid figure.effect-layla 
+{ 
+	max-width: 100%; 
+	width: 100%;
+}
+
+.grid figure
+ {
+	 min-width: 0px !important;
+}
+
+.textmsg 
+{
+	padding: 3px 5px;
+}
+
+.services .grid figure.effect-layla a.button_sliding_bg 
+{
+	left: 36%;
+	top: 60%;
+}
+
+.inputButtons
+ {
+	 margin: 0 5px;
+}
+
+.innerBgs 
+{
+	margin: 10px;
+	padding: 5px 5px;
+}
+
+.services .grid figure.effect-layla .frieghtForward h2 
+{
+	padding-top: 8%;
+}
+
+.services .grid figure.effect-layla .imporExport h2 
+{ 
+	padding-top: 8%;
+}
+
+.navigationBar nav.navbar ul li 
+{
+	position: relative;
+}
+
+.btn-bar span icon-bar
+{
+	background-color:white;
+}
+
+.btn-bar .icon-bar
+ {
+	 background-color: white;
+}
+
+.header 
+{
+	float: none;text-align: center;
+}
+
+.leftBlock
+ {
+	 float: none;
+	 text-align: center;
+}
+
+.rightBlock
+ { 
+	 float: none;
+	 width: auto; 
+	 margin-left: 0px; 
+	 text-align: center;
+}
+
+
+.btn-bar
+{
+	float:none;
+	background:black;
+	margin-right:0;
+}
+
+.headM .white div.menu-link
+{
+	position: absolute;
+	z-index: 1000;
+	background:#0054A6;
+	width:82%; 
+    float:none;
+	margin-left:auto;
+	margin-right:auto;
+	left:0; 
+	right:0;
+}
+
+.navigationBar nav.navbar ul.nav li a:focus
+ {
+	 background:transparent;
+}
+
+.navigationBar ul li 
+{
+	float: left;
+	width: 100%;
+}
+
+.navigationBar ul li a
+ { 
+	 float: none;
+	 text-align: center;
+	 padding:16px 12px;
+}
+
+.navigationBar ul
+ {
+	 float: none; 
+	 text-align: center;
+}
+
+.searchIcon
+ {
+	 float: none;
+	 width:100%;
+}
+
+.main .navbar-toggle {
+    margin-bottom: 0;
+    margin-right: 15px;
+    margin-top: 25px;
+}
+
+.main .navbar2 .navbar-toggle .icon-bar {
+    background-color: #000;
+}
+
+
+.nav.navbar-nav.navbar-right.importright a .socialing {
+    margin-right: 0;
+}
+
+.main .navbar2 .importright {
+    background: #0054A6;
+    margin-right: 0px;
+    margin-top: 50px;
+	margin-left:0px;
+}
+.navbar2 .nav.navbar-nav.navbar-right.importright a .importsigning
+{
+    margin-right: 0;
+}
+.navbar2 .navbar-background {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 35px;
+}
+
+.airShpmain
+{ 
+    min-height:auto;
+    padding: 0;
+}
+
+.route-afrs
+{
+	padding-right:0px;
+	padding-left:0px;
+}
+}
+/*************************************************361-480********************************************/
+
+@media only screen and (min-width : 361px) and (max-width : 480px) {
+	
+.nav.navbar-nav.navigations a
+ {
+	 padding: 11px;
+}
+
+.addition .table-responsive
+ { 
+  border: 1px solid transparent;
+}
+
+.addition .ui-accordion .ui-accordion-content
+ { 
+  padding: 20px 0 5px;
+}
+.pickup-input {
+    padding: 0 10px;
+}
+
+.airShpmain
+{ 
+  min-height:auto;
+}
+.route-afrs
+{
+	padding-right:0px; 
+	padding-left:0px;
+}
+
+.ofr-add .ofr-route-add .btn1
+{
+	margin-left:5px;
+}
+
+.ofr-add .ofr-route-add .btn2
+{ 
+   margin-left:5px;
+}
+
+.ofr-add .ofr-route-add .btn3
+{ 
+   margin-left:5px;
+}
+
+.inlandadd .colombiaadd .btn1
+{ 
+    margin-left:5px;
+}
+
+.inlandadd .colombiaadd .btn2
+{
+	margin-left:5px;
+}
+
+.inlandadd .colombiaadd .btn3
+{
+	margin-left:5px;
+}
+
+.colombiaadd .ml10
+{ 
+   margin-left:0px;
+}
+
+.airport-rates .modal-body.modaltext 
+{
+    overflow: scroll;
+    width:400px;
+}
+.airport-rates .panel-default .modaltext .borders
+ {
+    min-width: 200px;
+}
+}
+
+/*************************************************320********************************************/
+
+@media only screen and (max-device-width : 320px) {
+
+.inputButtons 
+{
+	margin: 0 5px;
+}
+
+.innerBgs 
+{
+	margin: 0px;
+	padding: 5px 5px;
+}	
+
+.buttonSlide 
+{
+	padding: 5px 5px;
+	font-size: 9px;
+}
+
+.services .grid figure.effect-layla .frieghtForward h2 
+{
+	padding-top: 4%;
+	font-size:14px;
+}
+
+.services .grid .effect-layla .frieghtForward p 
+{
+	font-size: 12px;
+}
+
+.services .grid figure.effect-layla .imporExport h2 
+{
+	padding-top: 4%;
+	font-size:14px;
+}
+
+.services .grid figure.effect-layla .imporExport p 
+{
+	font-size: 12px;
+}
+
+.services .grid figure.effect-layla a.button_sliding_bg
+ {
+	 font-size: 10px;
+	 left: 32%;
+	 top: 69%;
+}
+
+.buttonSlide span {
+    border: 1px solid #fff;
+    border-radius: 5px;
+    font-size: 12px;
+    padding: 13px;
+
+}
+.buttonSlide 
+{
+    padding: 21px 10px;
+
+}
+
+#typed
+{
+    font-size: 14px;
+}
+
+.addition .table-responsive 
+{ 
+	border: 1px solid transparent; 
+}
+
+.addition .ui-accordion .ui-accordion-content 
+{ 
+	padding: 20px 0 5px;
+}
+
+.pickup-input 
+{
+    padding: 0 10px;
+}
+.socialicons.socialicon
+{
+    margin-right: 0;
+}
+
+.routeafr
+{
+    min-height: 65px;
+}
+
+.legal .routeafr .backbtn
+{
+    float: left;
+}
+
+.afr-rates .routeafr .backbtn
+ {
+    float: right;
+}
+
+.afr-rates .routeafr {
+    min-height: auto;
+}
+
+.legal-representative
+{
+    min-width: 230px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.sharecontent .legal-edit
+{ 
+	 padding-left: 0; 
+	 padding-right: 0;
+}
+
+.sharecontent .legal-edit .box-body 
+{
+  padding:5px;
+}
+.legal-add
+{ 
+   padding-left: 0; 
+   padding-right: 0;
+}
+
+.legal-add .box-body 
+{
+  padding:5px;
+}
+
+.aereocol
+{
+	padding:10px;
+}
+
+.person-edit
+{
+	padding-right:0px;
+	padding-left:0px;
+}
+
+.person-edit .box-body
+{
+	padding:10px;
+}
+
+.person-add
+{
+	padding-right:0px; 
+	padding-left:0px;
+}
+
+.person-add .box-body
+{
+	padding:10px;
+}
+
+.col-airport-edit
+{
+	padding-right:0px;
+	padding-left:0px;
+}
+
+.content.Tarifasedit
+ {
+    min-width: 200px;
+}
+
+.colhead 
+{ 
+   padding:15px 5px;
+}
+
+.col-airport-edit .box-body
+{
+	padding:10px;
+}
+
+.col-airport-add .box-body
+{
+	padding:10px;
+}
+
+.col-airport-add
+{ 
+	padding-right:0; 
+	padding-left:0px;	
+}
+
+.main .navbar-toggle {
+    margin-bottom: 0;
+    margin-right: 15px;
+    margin-top: 25px;
+}
+
+.airShpmain
+{ 
+   min-height:auto;
+}
+
+.aereocol .content 
+{
+    padding: 0;
+}
+
+.aereocol .routeafr .backbtn
+{
+	float:left;
+}
+
+.person-incharge
+{ 
+	 padding-right:0px;
+	 padding-left:0px;
+}
+
+.routeafrs .routeafr .backbtn:hover
+{ 
+   float:right;
+}
+
+.route-afrs
+{
+	padding-right:0px;
+	padding-left:0px;
+}
+
+.route-add 
+{
+    padding-left: 0;
+    padding-right: 0;
+}
+.route-add .boxes .form-horizontal .form-group
+{ 
+	 margin-right:0px;
+	 margin-left:0px;
+}
+
+.route-edit .ui-accordion .ui-accordion-content
+{
+	padding-left:10px;
+	padding-right:15px;
+}
+
+.route-edit {
+    padding-left: 0;
+    padding-right: 0;
+}
+.routes-ofr .routeafr .backbtn:hover
+{
+	float:right;
+}
+
+.ofr-route-add 
+{
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.ofr-route-add .boxes .form-horizontal .form-group
+{ 
+	 margin-right:0px;
+	 margin-left:0px;
+ }
+
+.ofr-edit .ui-accordion .ui-accordion-content 
+{
+	padding-left:10px;
+	padding-right:15px;
+} 
+
+.ofr-edit .box-footers .left_footer .pull-right
+{
+    font-size: 12px;
+}
+
+.colombiaroute .routeafr .backbtn
+ { 
+   float: left;
+}
+
+.colombia-routes .ui-accordion .ui-accordion-content
+ {
+	 padding-left:10px;
+	 padding-right:15px;
+} 
+
+.colombia-routes .box-footers .left_footer .pull-right
+ {
+    font-size: 12px;
+} 
+
+.colombiaadd .ui-accordion .ui-accordion-content
+ {
+	 padding-left:10px;
+	 padding-right:15px;
+} 
+
+.colombiaadd .box-footers .left_footer .pull-right 
+{
+    font-size: 12px;
+} 
+
+.airport-rates .modal-body.modaltext
+{
+    overflow: scroll;
+    width: 263px;
+}
+
+.airport-rates .panel-default .modaltext .borders
+{
+    min-width: 110px;
+}
+.airport-rates .routeafr .backbtn
+{ 
+    float:left;
+}
+
+.afrrates
+{
+    padding: 0;
+}
+}
+
+/*************************************************321-360********************************************/
+
+@media only screen and (min-width : 321px) and (max-width : 360px) {
+
+.inputButtons
+ {
+	 margin: 0 2px;
+}
+
+.services .grid figure.effect-layla .frieghtForward h2 
+{
+	padding-top: 15%;
+	font-size:16px;
+}
+
+.services .grid .effect-layla .frieghtForward p
+ {
+	 font-size: 12px;
+}
+
+.services .grid figure.effect-layla .imporExport h2 
+{
+	padding-top: 15%;
+	font-size:16px;
+}
+
+.services .grid figure.effect-layla .imporExport p 
+{
+	font-size: 12px;
+}
+
+.services .grid figure.effect-layla a.button_sliding_bg 
+{
+	font-size: 10px;
+	left: 32%;
+	top: 62%;
+}
+
+.navigationBar ul li a 
+{
+	padding: 10px 8px;
+}
+
+.searchIcon
+ {
+	 float: none;
+	 width:100%;
+}
+
+.translation.translate
+ {
+	 margin-left:0px;
+} 
+
+.trackbtn
+ {
+    padding: 13px;
+	font-size:14px;
+}
+
+.navbar2 .navbar-background
+ {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 35px;
+}
+
+.nav.navbar-nav.navbar-right.importright a .socialing
+ {
+    margin-right: 10px;
+}
+
+.zoomIn .zooming-effect
+ {
+    margin-left: 0px;
+    margin-right: 60px;
+}
+
+.addition .table-responsive 
+{
+	border: 1px solid transparent;
+}
+
+.addition .ui-accordion .ui-accordion-content 
+{ 
+    padding: 20px 0 5px;
+}
+
+.pickup-input 
+{
+    padding: 0 10px;
+}
+
+.legal-representative
+{
+    min-width: 230px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.sharecontent .legal-edit
+{
+	padding-left: 0; 
+	padding-right: 0;
+}
+
+.sharecontent .legal-edit .box-body 
+{
+  padding:5px;
+}
+
+.legal-add
+{
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.legal-add .box-body
+ {
+  padding:5px;
+}
+
+.person-edit
+{
+	padding-right:0px;
+	padding-left:0px;
+}
+
+.person-edit .box-body
+{
+	padding:10px;
+}
+
+.person-add
+{
+	padding-right:0px;
+	padding-left:0px;
+}
+
+.person-add .box-body
+{
+	padding:10px;
+}
+
+.col-airport-edit .box-body
+{
+	padding:10px;
+}
+
+.col-airport-add .box-body
+{
+	padding:10px;
+}
+
+.routeafr 
+{
+    min-height: 65px;
+}
+
+.legal .routeafr .backbtn 
+{
+    float: left;
+}
+
+.person-incharge
+{
+	padding-right:0px;
+	padding-left:0px;
+}
+
+.route-afrs
+{
+	padding-right:0px;
+	padding-left:0px;
+}
+
+.route-add
+ {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.route-add .boxes .form-horizontal .form-group
+{ 
+	 margin-right:0px;
+	 margin-left:0px;
+}
+
+.route-edit .ui-accordion .ui-accordion-content
+{
+	padding-left:10px;
+	padding-right:15px;
+}
+
+.route-edit {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.ofr-routes
+{ 
+	 padding-right:0px;
+	 padding-left:0px;
+}
+
+.ofr-route-add .boxes .ui-accordion .ui-accordion-content
+{ 
+	padding:10px 5px;
+}
+
+.ofr-route-add 
+{
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.ofr-route-add .boxes .form-horizontal .form-group
+{ 
+   margin-right:0px; 
+   margin-left:0px;
+}
+
+.ofr-edit .ui-accordion .ui-accordion-content 
+{ 
+	padding-left:10px;
+	padding-right:15px;
+} 
+
+.ofr-edit .box-footers .left_footer .pull-right
+ { 
+	font-size: 12px;
+}
+
+.colombiaroute .routeafr .backbtn 
+{
+	float: left;
+}
+
+.colombia-routes .ui-accordion .ui-accordion-content
+ {
+	 padding-left:10px;
+	 padding-right:15px;
+} 
+
+.colombia-routes .box-footers .left_footer .pull-right
+ {
+    font-size: 12px;
+}
+
+.colombiaadd .ui-accordion .ui-accordion-content
+ {
+	 padding-left:10px;
+	 padding-right:15px;
+} 
+
+.colombiaadd .box-footers .left_footer .pull-right
+{
+    font-size: 12px;
+}
+
+.airport-rates .panel-default .modaltext .borders 
+{
+    min-width: 110px;
+}
+
+.afrrates 
+{
+    padding: 0;
+}
+}
+
+
+/******************************************482-568******************************************/
+
+@media only screen and (min-width : 482px) and (max-width : 568px)
+{
+
+.menu-link
+{
+	position: absolute;
+	z-index: 1000;
+	background:#0054A6;
+	width:89%;
+}
+
+.services .grid figure.effect-layla .frieghtForward h2
+ { 
+    padding-top: 8%;
+}
+
+.services .grid figure.effect-layla .imporExport h2
+ {
+	 padding-top: 8%;
+}
+
+.innerBgs 
+{ 
+  margin: 5px;
+  padding: 5px;
+}
+
+.services .grid figure.effect-layla .frieghtForward h2 
+{ 
+	 padding-top: 4%;
+	 font-size: 22px;
+}
+
+.services .grid .effect-layla .frieghtForward p
+ {
+	 font-size: 16px;
+}
+
+.services .grid figure.effect-layla a.button_sliding_bg 
+{ 
+	  left: 38%;
+	  top: 57%;
+}
+
+.services .grid figure.effect-layla .imporExport h2 
+{ 
+  font-size: 22px;
+}
+
+.services .grid figure.effect-layla .imporExport p 
+{
+	font-size: 16px;
+}
+
+.services .grid figure.effect-layla a.button_sliding_bg
+ {
+	 font-size: 15px;
+}
+}
+/*--------------------------------------415-640----------------------------------*/
+@media only screen and (min-width : 415px) and (max-width : 640px) {
+
+.cargotitle {
+    line-height: 35px;
+    font-size: 11px;
+    margin-bottom: 5px;
+}
+
+.leftMenuSecurity aside.main-sidebar
+{ 
+	-ms-transform: translate(0px,0px); /* IE 9 */ 
+	 -webkit-transform: translate(0px,0px); /* Safari */ 
+	 transform: translate(0px,0px);
+}
+
+.userview .panel-default .table-responsive
+ {
+	 border: 1px solid transparent;
+	 padding: 0;
+}
+
+.services .grid figure.effect-layla 
+{ 
+	 max-width: 100%;
+	 width: 100%;
+}
+
+.grid figure 
+{ 
+   min-width: 0px !important;
+}
+
+.textmsg 
+{
+	padding: 3px 5px;
+}
+
+.services .grid figure.effect-layla a.button_sliding_bg 
+{
+	left: 36%;
+	top: 60%;
+}
+
+.innerBgs 
+{
+	margin: 10px;
+	padding:10px;
+}
+
+.services .grid figure.effect-layla .frieghtForward h2 
+{ 
+   padding-top: 8%;
+}
+
+.services .grid figure.effect-layla .imporExport h2 
+{ 
+	padding-top: 8%;
+}
+
+.navigationBar nav.navbar ul.nav li a:focus 
+{
+	background:transparent;
+}
+
+.navigationBar ul li 
+{
+	float: left;
+	width: 100%;
+}
+
+.navigationBar ul li a 
+{ 
+	float: none; 
+	text-align: center;
+}
+
+.navigationBar ul 
+{
+	float: none;
+	text-align: center;
+}
+
+.searchIcon 
+{
+	float: none;
+	width:100%;
+}
+
+.navbar-header
+{
+	text-align:center;
+}
+
+.btn-bar
+{
+	float:none;
+	background:black;
+	margin-right:0;
+}
+
+.menu-link
+{
+	position: absolute;
+	z-index: 1000;
+	background:#0054A6;
+	width:91%;
+}
+
+.navigationBar nav.navbar ul li 
+{ 
+	position: relative;
+}
+
+.btn-bar span icon-bar
+{
+	background-color:white;
+}
+
+.btn-bar .icon-bar 
+{
+	background-color: white;
+}
+
+.header 
+{
+	float: none;
+	text-align: center;
+}
+
+.leftBlock 
+{
+	float: none;
+	text-align: center;
+}
+
+.rightBlock 
+{ 
+	 float: none;
+	 width: auto;
+	 margin-left: 0px;
+	 text-align: center;
+}
+
+#typed 
+{
+    font-size: 20px;
+}
+
+.translation.translate 
+{
+	margin-left: 6px;
+}
+
+.main .navbar-default .navbar-toggle .icon-bar 
+{
+    background-color: #fff;
+}
+
+.main .navbar2 .navbar-header .navbar-toggle .icon-bar
+ {
+    background-color: #888;
+} 
+
+.logo > img 
+{
+    float: left;
+    margin-left: 20px;
+}
+
+.nav.navbar-nav.importleft > li 
+{
+    float: left;
+    padding: 0;
+}
+
+.navbar2 .nav.navbar-nav.importleft a
+{
+    padding: 17px;
+}
+
+*::before, *::after 
+{
+    box-sizing: border-box;
+}
+*::before, *::after 
+{
+    box-sizing: border-box;
+}
+.navbar-default .navbar-toggle 
+{
+    border-color: #ddd;
+}
+
+.nav.navbar-nav.navigations > li 
+{
+    float: left;
+}
+
+.nav.navbar-nav.navbar-right.importright > li 
+{
+    float: left;
+}
+
+.nav.navbar-nav.navbar-right.importright 
+{
+    background: #0054a6;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 50px;
+}
+
+.navbar2 .navbar-background
+ {    
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.zooming-effect 
+{
+    margin-left: 0;
+    margin-right: 80px;
+}
+
+.zoomIn .zooming-effect
+{
+  margin-bottom:15px;
+}
+
+.addition .table-responsive
+ { 
+ border: 1px solid transparent;
+}
+ 
+.addition .ui-accordion .ui-accordion-content
+{ 
+   padding: 20px 0 5px;
+}
+
+.airShpmain 
+{ 
+   min-height:auto;
+}
+
+.route-afrs
+{
+	padding-right:0px;
+	padding-left:0px;
+}
+
+.airport-rates .modal-body.modaltext
+ {
+    overflow: scroll;
+    width: 263px;
+}
+
+.airport-rates .panel-default .modaltext .borders
+{
+    min-width: 110px;
+}
+
+.airport-rates .modal-body.modaltext 
+{
+    overflow: scroll;
+    width: auto;
+}
+}
+
+/*****************************************768-991******************************************/
+
+@media only screen and (min-width : 768px) and (max-width : 991px) {
+
+.rightBlock 
+{ 
+	 width: 100%;
+	 margin-left: 0px;
+}
+
+.rightBlock p
+{
+	font-size:11px;
+}
+
+.rightBlock a
+{
+	font-size:11px;
+}
+
+.navigationBar ul li a 
+{
+	padding: 15px 15px;
+}
+
+.frieghtForwarder
+ {
+    top: 400px;
+    width: 740px;
+} 
+
+.inputButtons
+ {
+	 margin: 0 5px;
+}
+
+.innerBgs 
+{
+	margin: 10px;
+	padding: 10px 10px;
+}
+
+.buttonSlide 
+{
+	padding: 12px 27px;
+}
+
+.services .grid figure.effect-layla .frieghtForward h2 
+{
+	padding-top: 17%;
+	font-size: 22px;
+}
+	
+.services .grid figure.effect-layla a.button_sliding_bg 
+{
+	left: 31%;
+	top: 64%;
+}
+
+.services .grid figure.effect-layla .imporExport h2 
+{ 
+	 padding-top: 17%;
+	 font-size: 22px;
+}
+
+.services .grid .effect-layla .frieghtForward p 
+{
+	font-size: 13px;
+}
+
+.services .grid figure.effect-layla .imporExport p 
+{
+	font-size: 13px;
+}
+
+.socialIcon ul 
+{
+	width: 101%;
+}
+
+.contactUs h2
+ {
+	 font-size: 16px;
+}
+
+.textmsg 
+{
+	padding: 0px 0px 0px 5px; 
+	font-size:14px !important;
+	width:100%;
+}
+
+.img-responsive, .thumbnail > img, .thumbnail a > img, .carousel-inner > .item > img, .carousel-inner > .item > a > img 
+{
+	height: 360px;
+}
+.nav.navbar-nav.navigations a {
+    padding: 15px 9px;
+}
+.tracklist {
+    padding: 0;
+}
+.outter-container {
+    padding: 0;
+}
+#navbar .navigations {
+    margin-left: 0%;
+}
+#navbar .navigations li a {
+    padding: 15px 3px;
+    font-size: 11px;
+}
+.outter-container .navbar-right a {
+    padding: 8px 3px;
+	font-size:14px;
+}
+.socialicons.socialicon {
+    margin-right: 0px;
+}
+.translation.translate {
+    margin-right: 2px;
+}
+.outter-container .navbar-right .translation a {
+    padding: 7px 2px;
+}
+.usericons {
+    margin-right: 10px;
+}
+.outter-container .navbar-right .usericons a {
+    font-size: 12px;
+}
+.navbar2 .nav.navbar-nav.importleft a
+{
+    padding: 21px 19px;
+}
+.main .navbar2 .importright {
+    margin-right: 15px;
+    margin-top: -42px;
+}
+.main .navbar2 .navbar-background {
+    min-height: 75px;
+}
+.main .navbar2 .importright
+{
+    margin-right: 15px;
+    margin-top: -42px;
+}
+.maritime .frieght-input {
+    margin-right: 0px;
+}
+.maritime .backbtn {
+    width: 40%;
+}
+#ui-id-6, #ui-id-4, #ui-id-2, #ui-id-3, #ui-id-8, #ui-id-10{
+    padding: 10px 15px;
+}
+.box-footers .left_footer .backbtn {
+    font-size: 12px;
+}
+.box-footers .left_footer .ml10 {
+	font-size: 12px;
+}
+.Tarifas-AFRadd .has-feedback{
+	margin-bottom:10px;
+}
+.tarifascol-right {
+    float: left;
+}
+.box-footers .hideDiv.previous {
+    font-size: 12px;
+}
+.left_footer .btn.btn-default {
+    font-size: 12px;
+}
+.trucking-add .input-group{
+	margin-bottom:10px;
+}
+.rate-additional {
+    padding-left: 0;
+    padding-right: 5px;
+}
+.rate-additional input.form-control {
+    padding: 0 3px;
+}
+}
+
+/************************************992-1024*****************************/
+
+@media screen and (min-width: 992px) and (max-width: 1024px) {
+
+#navbar .navigations {
+    margin-left: 0%;
+}
+.mainback .navbarright {
+    margin-right: 0;
+    margin-top: -75px;
+}
+.translation.translate {
+    margin-right: 5px;
+}
+.socialicons.socialicon {
+    margin-right: 0px;
+}
+#navbar .navigations li a {
+    padding: 15px 5px;
+}
+.tracklist {
+    padding: 0;
+}
+.navbar2 .nav.navbar-nav.navbar-right.importright a {
+    padding: 14px 3px;
+    font-size: 13px;
+}
+.main .navbar2 .importright {
+    margin-right: 15px;
+    margin-top: -55px;
+}
+.navbar2 .nav.navbar-nav.importleft a {
+    padding: 21px 10px;
+}
+.main .navbar2 .navbar-background {
+    min-height: 0;
+}
+.nav.navbar-nav.navbar-right.importright a .socials {
+    font-size: 16px;
+}
+.SubbmenSecurity>li>a>span {
+    font-size: 12px;
+}
+.airShipping {
+    padding: 0;
+}
+.importtype .innerBgs {
+    padding: 70px 40px;
+}
+.importtype .inputButtons {
+    margin: 80px 0;
+}
+.servicetype .inputButtons {
+    margin: 80px 0;
+}
+.servicetype .innerBgs {
+    padding: 70px 45px;
+}
+a.textformation {
+    font-size: 12px;
+}
+}
+
+/*--------------------------------------768--1024----------------------------------*/
+@media only screen and (min-width : 768px) and (max-width : 1024px) {
+
+.SubbmenSecurity .active a span
+ {
+	 display: inline-block;
+	 float: left;
+	 font-weight: bold;
+	 white-space: initial;
+	 width: 89%;
+	 word-wrap: break-word;
+}	
+
+.leftMenuSecurity
+{ 
+   width:100%;
+}
+
+.leftMenuSecurity i.fa
+{ 
+  float:left;
+}
+
+.userview .progressbar ol.progtrckr li.istLi, .uploaddoc .progressbar ol.progtrckr li.istLi, .downloaddoc .progressbar ol.progtrckr li.istLi, .optional .progressbar ol.progtrckr li.istLi, .payment .progressbar ol.progtrckr li.istLi, .booking .progressbar ol.progtrckr li.istLi, .quotesummary .progressbar ol.progtrckr li.istLi, .cargo .progressbar ol.progtrckr li.istLi, .additional-info .progressbar ol.progtrckr li.istLi{ width:23%;  margin-bottom:11px;} 
+
+.userview .progressbar ol.progtrckr li.scndLi, .uploaddoc .progressbar ol.progtrckr li.scndLi, .downloaddoc .progressbar ol.progtrckr li.scndLi, .optional .progressbar ol.progtrckr li.scndLi, .payment .progressbar ol.progtrckr li.scndLi, .booking .progressbar ol.progtrckr li.scndLi, .quotesummary .progressbar ol.progtrckr li.scndLi, .cargo .progressbar ol.progtrckr li.scndLi, .additional-info .progressbar ol.progtrckr li.scndLi{ width:39%; margin-bottom:11px;} 
+
+.userview .progressbar ol.progtrckr li.thrdLi, .uploaddoc .progressbar ol.progtrckr li.thrdLi, .downloaddoc .progressbar ol.progtrckr li.thrdLi, .optional .progressbar ol.progtrckr li.thrdLi, .payment .progressbar ol.progtrckr li.thrdLi, .booking .progressbar ol.progtrckr li.thrdLi, .quotesummary .progressbar ol.progtrckr li.thrdLi, .cargo .progressbar ol.progtrckr li.thrdLi, .additional-info .progressbar ol.progtrckr li.thrdLi{ width:36%; margin-bottom:11px;}  
+
+.userview .progressbar ol.progtrckr li.frthLi, .uploaddoc .progressbar ol.progtrckr li.frthLi, .downloaddoc .progressbar ol.progtrckr li.frthLi, .optional .progressbar ol.progtrckr li.frthLi, .payment .progressbar ol.progtrckr li.frthLi, .booking .progressbar ol.progtrckr li.frthLi, .quotesummary .progressbar ol.progtrckr li.frthLi, .cargo .progressbar ol.progtrckr li.frthLi, .additional-info .progressbar ol.progtrckr li.frthLi{ width:37%;} 
+
+.userview .progressbar ol.progtrckr li.ffthLi, .uploaddoc .progressbar ol.progtrckr li.ffthLi, .downloaddoc .progressbar ol.progtrckr li.ffthLi, .optional .progressbar ol.progtrckr li.ffthLi, .payment .progressbar ol.progtrckr li.ffthLi, .booking .progressbar ol.progtrckr li.ffthLi, .quotesummary .progressbar ol.progtrckr li.ffthLi, .cargo .progressbar ol.progtrckr li.ffthLi, .additional-info .progressbar ol.progtrckr li.ffthLi{ width:20%;} 
+
+.userview .progressbar ol.progtrckr li.sxthLi, .uploaddoc .progressbar ol.progtrckr li.sxthLi, .downloaddoc .progressbar ol.progtrckr li.sxthLi, .optional .progressbar ol.progtrckr li.sxthLi, .payment .progressbar ol.progtrckr li.sxthLi, .booking .progressbar ol.progtrckr li.sxthLi, .quotesummary .progressbar ol.progtrckr li.sxthLi, .cargo .progressbar ol.progtrckr li.sxthLi, .additional-info .progressbar ol.progtrckr li.sxthLi{ width:23%;} 			
+
+.userview .progressbar ol.progtrckr li.svthLi, .uploaddoc .progressbar ol.progtrckr li.svthLi, .downloaddoc .progressbar ol.progtrckr li.svthLi, .optional .progressbar ol.progtrckr li.svthLi, .payment .progressbar ol.progtrckr li.svthLi, .booking .progressbar ol.progtrckr li.svthLi, .quotesummary .progressbar ol.progtrckr li.svthLi, .cargo .progressbar ol.progtrckr li.svthLi, .additional-info .progressbar ol.progtrckr li.svthLi{ width:18%;}  
+
+	
+.navigationBar {
+    background: #0054a6 none repeat scroll 0 0;
+    float: left;
+    margin-bottom: 7px;
+    margin-left: 20px;
+    margin-top: 7px;
+    width: 100%;
+}
+
+.menus-navs
+{
+	padding:0px;
+}
+
+.language
+ {
+   text-align:right;
+    margin-top: 30px;
+	padding:0px;
+}
+
+.user
+{
+	margin-top:13px;
+	padding: 0;
+}
+
+.sociallinks 
+{
+    padding: 0;
+}
+
+.menus-navs 
+{
+    padding: 0;
+}
+
+.navigationBar ul li a
+ {
+    padding: 29px 7px;
+}
+
+.sociallinks a i 
+{
+    padding: 30px 2px;
+}
+
+.user
+{
+    margin-top: 26px;
+    text-align: right;
+}
+
+.mainback .navigations
+ {
+    color: #fff;
+    margin-left: 14%;
+    margin-top: 20px;
+}
+
+.frieghtForwarder .buttonSlide
+ {
+    padding: 28px 15px;
+}
+
+.sliderContainer .frieghtForwarder
+ {
+    top: 400px;
+    width: 740px;
+} 
+
+.nav.navbar-nav.navbar-right.importright a .socialing
+ {
+    margin-right: 0;
+}
+
+.SubbmenSecurity .active a span
+{
+    width: 88%;
+}
+
+.colombia-routes .ui-accordion .ui-accordion-content
+ {
+	 padding-left:10px;
+	 padding-right:15px;
+} 
+
+.icheck
+{
+    padding: 0px;
+}
+
+.forgot
+ {
+    padding: 0px;
+}
+.quoteborder {
+    min-height: 55px;
+}
+
+.sharecontent .legal-edit
+{ 
+	 padding-left: 0; 
+	 padding-right: 0;
+}
+
+.sharecontent .legal-edit .box-body 
+{
+  padding:5px 8px;
+}
+
+.legal-add
+{
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.legal-add .box-body
+ {
+  padding:5px 15px;
+}
+
+.person-edit
+{
+	padding-right:0px;
+	padding-left:0px;
+}
+
+.person-edit .box-body
+{
+	padding:5px 15px;
+}
+
+.person-add
+{
+	padding-right:0px;
+	padding-left:0px;
+}
+
+.person-add .box-body
+{
+	padding:5px 15px; 
+}
+
+.col-airport-edit .box-body
+{
+	padding:10px;
+}
+
+.col-airport-edit
+{
+	padding-right:0px;
+	padding-left:0px;
+}
+
+.col-airport-add .box-body
+{
+	padding:10px;
+}
+
+.col-airport-add
+{
+	padding-right:0px;
+	padding-left:0px;
+}
+
+.box-footers .left_footer .pull-right 
+{
+    font-size: 12px;
+}
+
+.routeadd .route-add .btn1 
+{
+    margin-left: 5px;
+}
+
+.routeadd .route-add .btn2
+ {
+    margin-right: 0;
+}
+
+
+.route-afrs 
+{
+	padding-right:0px;
+	padding-left:0px;
+}
+
+.ofr-route-add .btn1
+ {
+    margin-left: 5px;
+}
+
+.ofr-route-add .btn2
+ {
+    margin-right: 0;
+}
+
+.ofr-route-add .boxes .form-horizontal .form-group
+{ 
+	 margin-right:0px;
+	 margin-left:0px;
+}
+
+.SubbmenSecurity .active a span
+{
+    width: 88%;
+}
+
+.colombiaadd .ui-accordion .ui-accordion-content 
+{
+	padding-left:10px;
+	padding-right:15px;
+} 
+.trackinput
+ {
+    margin: 0;
+	width:75%;
+}
+.innerBgs {
+    margin: 5px;
+	padding: 10px;
+}
+}
+
+/******************************************1024******************************************/
+
+@media only screen and (min-width: 1024px) and (max-width: 1024px) {
+
+.main .navigations
+ {
+    margin-left: 20px;
+    margin-top: 42px;
+}
+
+.main .navbarright
+{
+    margin-right: 0;
+    margin-top: -70px;
+}
+
+.nav.navbar-nav.importleft a
+{
+    padding: 21px;
+}
+
+.nav.navbar-nav.importleft a
+{
+    padding: 20px 11px;
+}
+
+.navbar2 .navbar-background 
+{
+    min-height: 50px;
+}
+
+.navbar2 .importright 
+{
+    margin-right: 15px;
+    margin-top: -54px;
+}
+
+.SubbmenSecurity .active a span 
+{
+    width: 88%;
+}
+.servicetype .innerBgs {
+    padding: 75px 45px;
+}
+.translation.translate {
+    margin-right: 0;
+}
+.socialicons.socialicon {
+    margin-right: 0;
+}
+.tracklist {
+    padding: 0;
+}
+.nav.navbar-nav.navigations a {
+    padding: 15px 4px;
+}
+}
+
+
+/******************************************1025-1199******************************************/
+
+@media screen and (min-width: 1025px) and (max-width: 1199px) {
+
+.leftMenuSecurity {
+    width: auto;
+}
+a.textformation {
+    font-size: 12px;
+}
+.navigationBar 
+{
+    background: #0054a6 none repeat scroll 0 0;
+    float: left;
+    margin-bottom: 7px;
+    margin-left: 20px;
+    margin-top: 7px;
+    width: 100%;
+}
+
+.menus-navs
+{
+	padding:0px;
+}
+
+.language 
+{
+   text-align:right;
+    margin-top: 30px;
+    padding:0px;
+}
+
+.user
+{
+	margin-top: 13px;
+	padding: 0;
+}
+
+.sociallinks 
+{
+    padding: 0;
+}
+
+.menus-navs 
+{
+    padding: 0;
+}
+
+.navigationBar ul li a
+{
+    padding: 29px 7px;
+}
+
+.sociallinks a i
+{
+    padding: 30px 2px;
+}
+
+.user{
+    margin-top: 26px;
+    text-align: right;
+}
+
+.rowLefts {
+    padding-left: 15px;
+}
+
+.nav.navbar-nav.navbar-right.importright a .socialing 
+{
+    margin-right: 0;
+}
+
+.navbar2 .navbar-background
+ {
+    margin-left: 13%;
+}
+
+.navbar2 .nav.navbar-nav.navbar-right.importright a 
+{
+    padding: 14px 6px;
+}
+	 
+.userview .progressbar ol.progtrckr li.istLi, .uploaddoc .progressbar ol.progtrckr li.istLi, .downloaddoc .progressbar ol.progtrckr li.istLi, .optional .progressbar ol.progtrckr li.istLi, .payment .progressbar ol.progtrckr li.istLi, .booking .progressbar ol.progtrckr li.istLi, .quotesummary .progressbar ol.progtrckr li.istLi, .cargo .progressbar ol.progtrckr li.istLi, .additional-info .progressbar ol.progtrckr li.istLi{ width:23%;  margin-bottom:11px;} 
+
+.userview .progressbar ol.progtrckr li.scndLi, .uploaddoc .progressbar ol.progtrckr li.scndLi, .downloaddoc .progressbar ol.progtrckr li.scndLi, .optional .progressbar ol.progtrckr li.scndLi, .payment .progressbar ol.progtrckr li.scndLi, .booking .progressbar ol.progtrckr li.scndLi, .quotesummary .progressbar ol.progtrckr li.scndLi, .cargo .progressbar ol.progtrckr li.scndLi, .additional-info .progressbar ol.progtrckr li.scndLi{ width:39%; margin-bottom:11px;} 
+
+.userview .progressbar ol.progtrckr li.thrdLi, .uploaddoc .progressbar ol.progtrckr li.thrdLi, .downloaddoc .progressbar ol.progtrckr li.thrdLi, .optional .progressbar ol.progtrckr li.thrdLi, .payment .progressbar ol.progtrckr li.thrdLi, .booking .progressbar ol.progtrckr li.thrdLi, .quotesummary .progressbar ol.progtrckr li.thrdLi, .cargo .progressbar ol.progtrckr li.thrdLi, .additional-info .progressbar ol.progtrckr li.thrdLi{ width:36%; margin-bottom:11px;}  
+
+.userview .progressbar ol.progtrckr li.frthLi, .uploaddoc .progressbar ol.progtrckr li.frthLi, .downloaddoc .progressbar ol.progtrckr li.frthLi, .optional .progressbar ol.progtrckr li.frthLi, .payment .progressbar ol.progtrckr li.frthLi, .booking .progressbar ol.progtrckr li.frthLi, .quotesummary .progressbar ol.progtrckr li.frthLi, .cargo .progressbar ol.progtrckr li.frthLi, .additional-info .progressbar ol.progtrckr li.frthLi{ width:37%;} 
+
+.userview .progressbar ol.progtrckr li.ffthLi, .uploaddoc .progressbar ol.progtrckr li.ffthLi, .downloaddoc .progressbar ol.progtrckr li.ffthLi, .optional .progressbar ol.progtrckr li.ffthLi, .payment .progressbar ol.progtrckr li.ffthLi, .booking .progressbar ol.progtrckr li.ffthLi, .quotesummary .progressbar ol.progtrckr li.ffthLi, .cargo .progressbar ol.progtrckr li.ffthLi, .additional-info .progressbar ol.progtrckr li.ffthLi{ width:20%;} 
+
+.userview .progressbar ol.progtrckr li.sxthLi, .uploaddoc .progressbar ol.progtrckr li.sxthLi, .downloaddoc .progressbar ol.progtrckr li.sxthLi, .optional .progressbar ol.progtrckr li.sxthLi, .payment .progressbar ol.progtrckr li.sxthLi, .booking .progressbar ol.progtrckr li.sxthLi, .quotesummary .progressbar ol.progtrckr li.sxthLi, .cargo .progressbar ol.progtrckr li.sxthLi, .additional-info .progressbar ol.progtrckr li.sxthLi{ width:23%;} 			
+
+.userview .progressbar ol.progtrckr li.svthLi, .uploaddoc .progressbar ol.progtrckr li.svthLi, .downloaddoc .progressbar ol.progtrckr li.svthLi, .optional .progressbar ol.progtrckr li.svthLi, .payment .progressbar ol.progtrckr li.svthLi, .booking .progressbar ol.progtrckr li.svthLi, .quotesummary .progressbar ol.progtrckr li.svthLi, .cargo .progressbar ol.progtrckr li.svthLi, .additional-info .progressbar ol.progtrckr li.svthLi{ width:18%;}  
+ 
+.frieghtForwarder {
+    top: 300px;
+}
+#navbar .navigations {
+    margin-left: 2%;
+}
+.translation.translate {
+    margin-right: 5px;
+}
+.socialicons.socialicon {
+    margin-right: 5px;
+}
+#navbar .navigations li a {
+    padding: 15px 7px;
+}
+.trackinput {
+    width: 77%;
+}
+.nav.navbar-nav.importleft a {
+    padding: 12px 7px;
+}
+.importtype .innerBgs, .servicetype .innerBgs {
+    padding: 65px 40px;
+}
+.airShipping {
+    padding: 0;
+}
+.importtype, .servicetype {
+    margin-top: 85px;
+}
+.maritime .backbtn {
+    width: 40%;
+}
+}
+
+/**************************************************992-1199**********************************************/
+
+@media only screen and (min-width : 992px) and (max-width : 1199px) {
+	
+.frieghtForwarder 
+{
+	top: 400px;
+}
+
+.services .grid figure.effect-layla a.button_sliding_bg 
+{
+	left: 36%;
+	top: 63%;
+}
+
+.textmsg 
+{
+	padding: 3px 8px;
+	font-size: 12px !important;
+}
+
+.rightBlock
+ {
+	 width: 100%;
+}
+a.textformation {
+    font-size: 12px;
+}
+} 
+
+/**************************************************1100-1500**********************************************/
+
+
+@media screen and (min-width: 1100px) and (max-width: 1500px) {
+	
+ol.progtrckr li.progtrckr-todo{
+    font-size: 13px;
+}
+
+ol.progtrckr li.progtrckr-done.activeProgressBar{
+    font-size: 13px;
+}
+
+ol.progtrckr li.progtrckr-done{
+    font-size: 13px;
+}
+}
